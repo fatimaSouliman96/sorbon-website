@@ -1,0 +1,34 @@
+.clients .swiper {
+  width: 100%;
+  max-width: 1200px;
+  height: 300px;
+  padding: 50px;
+}
+
+.clients .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 232px;
+  height: 146px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.clients .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.clients .swiper-button-next,
+.clients .swiper-button-prev {
+  color: #17133F !important;
+  margin-top: -2.5rem !important;
+}
+
+.clients .swiper-button-prev {
+  margin-left: -0.5rem !important;
+}
+
+.clients .swiper-button-next {
+  margin-right: -0.4rem !important;
+}

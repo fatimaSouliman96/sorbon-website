@@ -1,0 +1,145 @@
+.veunesSwiper {
+  width: 100%;
+  max-width: 1200px;
+  height: 350px;
+  padding-bottom: 1rem;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.veunesSwiper .swiper-slide {
+  display: flex;
+  height: 184px;
+  width: 297px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+  transform: scale(0.8);
+  /* Make non-center slides smaller */
+  position: relative;
+}
+
+.veunesSwiper .swiper-slide::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 184px;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.493);
+  border-radius: 8px;
+
+}
+
+.veunesSwiper .swiper-slide-active::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 184px;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  border-radius: 8px;
+
+}
+
+/* Make center slide larger and full opacity */
+.veunesSwiper .swiper-slide-active {
+  transform: scale(1.3);
+  /* Increase size for center slide */
+  opacity: 1;
+  /* Full opacity */
+  z-index: 2;
+  /* Bring to front */
+}
+
+.veunesSwiper .swiper-pagination-bullet {
+  border: 3.6px solid #17133F !important;
+  background-color: transparent !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.veunesSwiper .swiper-pagination-bullet-active {
+  background-color: #17133F !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+
+.veunesSwiper .swiper-slide img {
+  width: 100%;
+  height: 184px;
+  border-radius: 8px;
+  /* Default rounded corners */
+  transition: border-radius 0.4s ease-in-out;
+}
+
+/* Increase rounding for the center slide */
+.veunesSwiper .swiper-slide-active img {
+  border-radius: 8px;
+}
+
+/* Scale effect: Center slide larger */
+.veunesSwiper .swiper-slide-active {
+  transform: scale(1.2);
+  /* Make center slide bigger */
+  z-index: 2;
+  /* Bring to front */
+}
+
+.veunesSwiper .swiper-pagination-bullet {
+  border: 3.6px solid #17133F !important;
+  background-color: transparent !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.veunesSwiper .swiper-pagination-bullet-active {
+  background-color: #17133F !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.veunesSwiper .swiper-button-prev {
+  margin-left: 20rem !important;
+  margin-top: 8rem !important;
+  color: #17133F !important;
+}
+
+.veunesSwiper .swiper-button-next {
+  margin-right: 20rem !important;
+  margin-top: 8rem !important;
+  color: #17133F !important;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .veunesSwiper .swiper-button-prev {
+    margin-left: 10rem !important;
+
+  }
+
+  .veunesSwiper .swiper-button-next {
+    margin-right: 10rem !important;
+
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+
+  .veunesSwiper .swiper-button-prev,
+  .veunesSwiper .swiper-button-next {
+    margin: 0 !important;
+    transform: translateY(-50%);
+  }
+
+  .veunesSwiper .swiper-button-prev {
+    left: 10px !important;
+  }
+
+  .veunesSwiper .swiper-button-next {
+    right: 10px !important;
+  }
+}
