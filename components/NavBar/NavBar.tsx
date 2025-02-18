@@ -61,7 +61,7 @@ export default function NavBar() {
                     return (
                         <li
                             key={ele.title}
-                            className={`${isScrolled ? "text-secondary hover:border-secondary" : "text-white hover:border-white"} text-sm hover:border-b-2 hover:border-white transition-all duration-200  ${isActive ? `border-b-2 ${isScrolled ? "border-secondary" : "border-white"}  font-bold` : "font-medium"
+                            className={`${isScrolled ? "text-secondary hover:border-secondary" : "text-white hover:border-white"} text-sm hover:border-b-2  transition-all duration-200  ${isActive ? `border-b-2 ${isScrolled ? "border-secondary" : "border-white"}  font-bold` : "font-medium"
                                 }`}
                         >
                             <Link href={ele.link}>{ele.title}</Link>
