@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 
 import "swiper/css";
@@ -19,6 +19,7 @@ export default function VeunesSlider() {
       loop={true}
       slidesPerView={2} // Show the main slide + parts of side slides
       spaceBetween={50}
+      autoplay={{ delay: 6000, disableOnInteraction: false }}
       breakpoints={{
         0: { // For screens <= 714px
           slidesPerView: 1,
@@ -37,12 +38,13 @@ export default function VeunesSlider() {
         rotate: 0,
         stretch: 0,
         depth: 300, // Increase depth for better effect
-        modifier: 1.5,
+        modifier: 0.6,
         slideShadows: false, // Keep clean look
       }}
       pagination={{ clickable: true }}
       navigation={true}
-      modules={[EffectCoverflow, Pagination, Navigation]}
+      
+      modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
       className="veunesSwiper"
     >
       {[...Array(11)].map((_, index) => (

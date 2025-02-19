@@ -1,0 +1,15 @@
+/* Hide default calendar icon for WebKit browsers (Chrome, Edge, Safari) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    /* display: none; */
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  /* Hide default calendar icon for Firefox */
+  input[type="date"] {
+    position: relative;
+  }
+  input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
+  }
+  

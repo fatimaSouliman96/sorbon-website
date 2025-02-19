@@ -33,6 +33,10 @@ export const comboBoxData: comboBoxType[] = [
             {
                 options: "Duration",
                 value: "Duration"
+            },
+            {
+                options: "Dur",
+                value: "Dur"
             }
         ]
 

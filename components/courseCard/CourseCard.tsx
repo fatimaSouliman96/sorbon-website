@@ -15,7 +15,7 @@ const CourseCard = () => {
 
     return (
         <div className='pt-2 pb-6 px-2  bg-[#E2E0F5] rounded-lg shadow-[0px_3px_4.5px_rgba(31,27,59,0.25)]'>
-            <div className='w-full h-[250px] rounded-lg relative'>
+            <div className='w-full h-[180px] rounded-lg relative'>
                 <Image className='rounded-lg' src='/course.png' alt='course' fill />
             </div>
             <div className='flex flex-col pt-2' >

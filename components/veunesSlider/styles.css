@@ -1,6 +1,6 @@
 .veunesSwiper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   height: 350px;
   padding-bottom: 1rem;
   padding-top: 50px;
@@ -45,7 +45,7 @@
 
 /* Make center slide larger and full opacity */
 .veunesSwiper .swiper-slide-active {
-  transform: scale(1.3);
+  transform: scale(1.1);
   /* Increase size for center slide */
   opacity: 1;
   /* Full opacity */

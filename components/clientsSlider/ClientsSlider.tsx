@@ -22,6 +22,7 @@ export default function ClientsSlider() {
                 pagination={true}
                 navigation={true}
                 modules={[Navigation, Autoplay]}
+                loop={true}
                 autoplay={{ delay: 6000, disableOnInteraction: false }}
                 className="mySwiper"
                 slidesPerView={5}

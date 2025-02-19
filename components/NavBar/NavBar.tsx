@@ -48,8 +48,8 @@ export default function NavBar() {
         };
     }, []);
     return (
-        <nav className={`${isScrolled ? "bg-primary shadow-[0px_6px_10px_0px_rgba(23,19,63,0.25)]" : "bg-transparent"} transition-all duration-200 w-full max-w-full fixed top-0 px-12 z-20 pb-4 flex items-center justify-between`}>
-            <div className="w-[100px] mt-6 h-[100px] relative">
+        <nav className={`${isScrolled ? "bg-primary shadow-[0px_6px_10px_0px_rgba(23,19,63,0.25)]" : "bg-transparent"} transition-all duration-200 w-full max-w-full fixed h-24 top-0 px-12 z-20 pb-4 flex items-center justify-between`}>
+            <div className="w-[80px] mt-6 h-[80px] relative">
                 {isScrolled && <Image src={"/logo-blue.svg"} fill alt="sorbon-logo" />}
                 {!isScrolled && <Image src={"/logo-white.svg"} fill alt="sorbon-logo" />}
             </div>

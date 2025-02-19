@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { optionsValues } from "@/constant/comboBoxData";
 import Image from "next/image";
-import React from "react";
 
 interface ComboBoxProps {
   label: string;
@@ -8,30 +8,43 @@ interface ComboBoxProps {
 }
 
 const ComboBox: React.FC<ComboBoxProps> = ({ label, options }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState(label);
+
   return (
     <div className="relative w-full">
-      {/* Custom Arrow */}
-      <Image
-      width={5}
-      height={9}
-        src="/arrow-down.svg"
-        className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none w-4 h-4"
-        alt="Dropdown Arrow"
-      />
+      {/* Dropdown Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex justify-between items-center border-b border-white bg-transparent text-white p-2 appearance-none focus:outline-none"
+      >
+        {selected}
+        <Image
+          width={12}
+          height={12}
+          src="/arrow-down.svg"
+          className={`ml-2 transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`}
+          alt="Dropdown Arrow"
+        />
+      </button>
 
-      {/* Select Dropdown */}
-      <select className="w-full border-b text-white border-white bg-transparent appearance-none text-gray-border-white p-2">
-        <option className="text-gray-border-white bg-gray-border-white">{label}</option>
-        {options.map((option) => (
-          <option
-            key={option.value}
-            value={option.value}
-            className="text-white border-white bg-white "
-          >
-            {option.options}
-          </option>
-        ))}
-      </select>
+      {/* Dropdown Options */}
+      {isOpen && (
+        <ul className="absolute w-full mt-1 bg-white border border-gray-300 rounded-md shadow-md z-10">
+          {options.map((option) => (
+            <li
+              key={option.value}
+              className="p-2 hover:bg-gray-200 cursor-pointer text-black"
+              onClick={() => {
+                setSelected(option.options);
+                setIsOpen(false);
+              }}
+            >
+              {option.options}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
