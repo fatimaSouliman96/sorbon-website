@@ -1,13 +1,12 @@
 "use client"
 import { comboBoxData } from '@/constant/comboBoxData'
-import React, { useState } from 'react'
+import React from 'react'
 import ComboBox from '../comboBox/ComboBox'
 import Image from 'next/image';
 import './search.css'
 import CustomDatepicker from '../date/Date';
 
 export default function FiltterSearch() {
-    const [isFocused, setIsFocused] = useState(false);
 
     return (
         <div className='sm:gap-4 lg:gap-12 md:gap-8 p-8 justify-center w-[90%]  sm:mt-8 md:mt-12 lg:lg-14  flex gap-4 flex-col items-center m-auto bg-[#F0EFFA66] backdrop-blur-[20px]   rounded-[10px] '>
