@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary p-16">
-            <div className='flex justify-between flex-wrap' >
+        <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary lg:p-12 p-6">
+            <div className='grid 433max:grid-cols-1 585max:grid-cols-2 721max:grid-cols-3 913max:grid-cols-4 grid-cols-1 914min:grid-cols-5 gap-4 justify-between'>
                 <div className="w-[200px] h-[200px] relative">
                     <Image src="/logo-white.svg" fill alt="sorbon-logo" />
                 </div>
@@ -30,7 +30,7 @@ export default function Footer() {
                         <Image width={24} height={24} src='/phone.svg' alt="phone" />
                         +421 915 500 996
                     </li>
-                    <li className='text-lg font-light flex items-center text-white gap-2'>
+                    <li className='text-lg  flex-shrink font-light flex items-center text-white gap-2'>
                         <Image width={24} height={24} src='/email.svg' alt="email" />
                         sorbonne@sorbonneacademy.com
                     </li>
@@ -49,10 +49,10 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <div className='flex flex-col pt-32' >
+            <div className='flex flex-col lg:pt-32 pt-24' >
                 <span className='bg-[#FFFFFF80] block w-full h-[1px]'></span>
                 <div className='flex items-center pt-4 justify-between' >
-                    <p className='721min:text-lg text-base font-light text-white'>© 2023 Sorbonne Academy. All rights reserved.</p>
+                    <p className='721min:text-lg text-base font-light   text-white'>© 2023 Sorbonne Academy. All rights reserved.</p>
                     <div className='flex items-center gap-4'>
                         <p className='721min:text-lg text-base font-light text-white'>Terms and Conditions</p> 
                         <p className='721min:text-lg text-base font-light text-white'>Privacy Policy</p>

@@ -1,5 +1,5 @@
-"use client"
-import { useState } from "react";
+"use client";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const CustomDatePicker = () => {
@@ -7,11 +7,26 @@ const CustomDatePicker = () => {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const calendarRef = useRef<HTMLDivElement>(null);
 
-  // توليد أيام الشهر الحالي
-  const getDaysInMonth = (month: number, year: number) => {
-    return new Date(year, month + 1, 0).getDate();
-  };
+  // Close calendar when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
+  const getDaysInMonth = (month: number, year: number) => new Date(year, month + 1, 0).getDate();
 
   const daysInMonth = getDaysInMonth(currentMonth, currentYear);
   const months = [
@@ -30,8 +45,8 @@ const CustomDatePicker = () => {
   ];
 
   return (
-    <div className="relative w-full">
-      {/* أيقونة التقويم */}
+    <div className="relative w-full" ref={calendarRef}>
+      {/* Calendar Icon */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -40,7 +55,7 @@ const CustomDatePicker = () => {
         <Image width={20} height={20} src="/date.svg" alt="Calendar Icon" className="pointer-events-none" />
       </button>
 
-      {/* حقل الإدخال */}
+      {/* Input Field */}
       <input
         type="text"
         value={selectedDate || ""}
@@ -50,33 +65,39 @@ const CustomDatePicker = () => {
         onClick={() => setIsOpen(!isOpen)}
       />
 
-      {/* التقويم */}
+      {/* Calendar */}
       {isOpen && (
         <div className="absolute left-0 mt-2 w-72 bg-white text-black rounded-lg shadow-lg p-4 z-10">
-          {/* التنقل بين الأشهر والسنوات */}
-          <div className="flex items-center justify-between" >
+          {/* Month & Year Navigation */}
+          <div className="flex items-center justify-between">
             <div className="flex gap-3 justify-between items-center mb-2">
               <button onClick={() => setCurrentYear(currentYear - 1)} className="px-2 py-1 hover:bg-gray-200 rounded">
-                <Image className="rotate-180" src='/arrow-eylow.svg' width={12} height={12} alt="arrow" />
+                <Image className="rotate-180" src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
               </button>
               <span className="text-base text-secondary font-semibold">{currentYear}</span>
               <button onClick={() => setCurrentYear(currentYear + 1)} className="px-2 py-1 hover:bg-gray-200 rounded">
-              <Image  src='/arrow-eylow.svg' width={12} height={12} alt="arrow" />
+                <Image src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
               </button>
             </div>
 
             <div className="flex gap-3 justify-between items-center mb-2">
-              <button onClick={() => setCurrentMonth((currentMonth + 11) % 12)} className="px-2 py-1 hover:bg-gray-200 rounded">
-              <Image className="rotate-180" src='/arrow-eylow.svg' width={12} height={12} alt="arrow" />
+              <button
+                onClick={() => setCurrentMonth((currentMonth + 11) % 12)}
+                className="px-2 py-1 hover:bg-gray-200 rounded"
+              >
+                <Image className="rotate-180" src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
               </button>
               <span className="text-base text-secondary font-semibold">{months[currentMonth].name}</span>
-              <button onClick={() => setCurrentMonth((currentMonth + 1) % 12)} className="px-2 py-1 hover:bg-gray-200 rounded">
-              <Image src='/arrow-eylow.svg' width={12} height={12} alt="arrow" />
+              <button
+                onClick={() => setCurrentMonth((currentMonth + 1) % 12)}
+                className="px-2 py-1 hover:bg-gray-200 rounded"
+              >
+                <Image src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
               </button>
             </div>
           </div>
 
-          {/* عرض الأيام */}
+          {/* Days Grid */}
           <div className="grid grid-cols-7 gap-2">
             {[...Array(daysInMonth)].map((_, index) => {
               const day = index + 1;
@@ -101,5 +122,6 @@ const CustomDatePicker = () => {
 };
 
 export default CustomDatePicker;
+
 
 

@@ -26,6 +26,7 @@ export default {
       backgroundImage: {
         'hero-categories-bg': "url('/hero-category.png')", 
         'hero-cities-bg': "url('/hero-cities.png')", 
+        'hero-home-bg': "url('/hero-image.png')", 
       },
     },
   },
