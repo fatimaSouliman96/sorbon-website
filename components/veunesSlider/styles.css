@@ -8,6 +8,7 @@
 }
 
 .veunesSwiper .swiper-slide {
+  position: relative;
   display: flex;
   height: 184px;
   width: 297px;

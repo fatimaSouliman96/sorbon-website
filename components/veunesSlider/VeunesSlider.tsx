@@ -56,6 +56,9 @@ export default function VeunesSlider() {
             width={450}
             height={278}
           />
+          <div className="absolute top-0 left-0 w-full h-full flex  items-center justify-center rounded-xl bg-[#17133f99] z-10" >
+            <h1 className="text-4xl text-white font-bold texy-center ">City</h1>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

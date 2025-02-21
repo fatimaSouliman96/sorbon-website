@@ -1,5 +1,4 @@
-import React from 'react'
-import SwiperSlider from '../swiperSlider/SwiperSlider'
+
 import FiltterSearch from '../filtterSearch/FiltterSearch'
 
 export default function Hero() {
