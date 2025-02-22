@@ -2,11 +2,9 @@ import React from 'react'
 import FiltterSearch from '../filtterSearch/FiltterSearch'
 
 interface HeroProps {
-    title: string,
-    descraption: string,
     categories?: boolean
 }
-const HeroCategories: React.FC<HeroProps> = ({title, descraption, categories}) => {
+const HeroCategories: React.FC<HeroProps> = ({ categories}) => {
     return (
         <div className='w-full relative h-[70vh] hero'>
             <div className={`${categories ? "bg-hero-categories-bg" : "bg-hero-cities-bg"} w-full h-full  pt-16 bg-center bg-cover bg-no-repeat`} >
