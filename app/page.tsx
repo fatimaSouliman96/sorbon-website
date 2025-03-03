@@ -1,7 +1,7 @@
-import CategorySection from "@/components/categorySection/CategorySection";
 import ClientsSection from "@/components/clientsSection/ClientsSection";
 import Explore from "@/components/Explore/Explore";
-import Hero from "@/components/hero/Hero";
+import HeroCategories from "@/components/heroCategories/HeroCategories";
+import TransferSection from "@/components/transferSection/TransferSection";
 import Trustworthy from "@/components/Trustworthy/Trustworthy";
 import Upcoming from "@/components/upcoming/Upcoming";
 import Veunes from "@/components/vuneusSection/Veunes";
@@ -13,12 +13,12 @@ export default function Home() {
   return (
 
     < >
-        <Hero />
+        <HeroCategories background="bg-hero-home-bg" />
         <Upcoming />
+        <TransferSection />
         <Explore />
         <Trustworthy />
         <ClientsSection />
-        <CategorySection />
         <Veunes />
     
     </>

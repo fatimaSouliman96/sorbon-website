@@ -8,25 +8,6 @@ type comboBoxType = {
 }
 export const comboBoxData: comboBoxType[] = [
     {
-        lable: "Category",
-        options: [
-            {
-                options: "Category",
-                value: "category"
-            }
-        ]
-    },
-    {
-        lable: "Venue",
-        options: [
-            {
-                options: "Venue",
-                value: "venue"
-            }
-        ]
-
-    },
-    {
         
         lable: "Duration",
         options: [
@@ -40,7 +21,29 @@ export const comboBoxData: comboBoxType[] = [
             }
         ]
 
-    }
+    },
+    {
+        lable: "Venue",
+        options: [
+            {
+                options: "Venue",
+                value: "venue"
+            }
+        ]
+
+    },
+    {
+
+        lable: "Category",
+        options: [
+            {
+                options: "Category",
+                value: "category"
+            }
+        ]
+    },
+
+    
     // {
     //     lable: "Course type",
     //     options: [

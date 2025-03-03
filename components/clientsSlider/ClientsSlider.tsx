@@ -25,8 +25,6 @@ export default function ClientsSlider() {
                 loop={true}
                 autoplay={{ delay: 6000, disableOnInteraction: false }}
                 className="mySwiper"
-                slidesPerView={5}
-                spaceBetween={45}
                 breakpoints={{
                         0: { // For screens <= 714px
                           slidesPerView: 1,
@@ -41,8 +39,8 @@ export default function ClientsSlider() {
                           spaceBetween: 20,
                         },
                         913: { // For screens >= 1075px
-                          slidesPerView: 4,
-                          spaceBetween: 20,
+                          slidesPerView: 5,
+                          spaceBetween: 25,
                         },
                       }}
             >

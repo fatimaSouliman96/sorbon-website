@@ -1,12 +1,13 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
     return (
         <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary lg:p-12 p-6">
-            <div className='grid 433max:grid-cols-1 585max:grid-cols-2 721max:grid-cols-3 913max:grid-cols-4 grid-cols-1 914min:grid-cols-5 gap-4 justify-between'>
-                <div className="w-[200px] h-[200px] relative">
-                    <Image src="/logo-white.svg" fill alt="sorbon-logo" />
+            <div className='grid 433max:grid-cols-1  585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3 grid-cols-1 914min:grid-cols-4 items-start'>
+                <div className=" relative">
+                    <Image src="/logo-white.svg" width={200} height={200} alt="sorbon-logo" />
                 </div>
                 <ul>
                     <li className='721min:text-xl pb-2 text-lg font-medium text-white' >Navigation</li>
@@ -30,16 +31,18 @@ export default function Footer() {
                         <Image width={24} height={24} src='/phone.svg' alt="phone" />
                         +421 915 500 996
                     </li>
-                    <li className='text-lg  flex-shrink font-light flex items-center text-white gap-2'>
+                    <li className='text-lg font-light flex items-center text-white gap-2'>
                         <Image width={24} height={24} src='/email.svg' alt="email" />
-                        sorbonne@sorbonneacademy.com
+                        <Link href="#" >sorbonne@sorbonneacademy.com</Link>
                     </li>
                     <li className='text-lg font-light flex items-center text-white gap-3'>
                         <Image width={24} height={24} src='/location-footer.svg' alt="location" />
                         Šancová 356861 - 831 04 Bratislava, Slovakia
                     </li>
                 </ul>
-                <div>
+                
+            </div>
+            <div className='pt-8' >
                     <p className='text-lg font-light flex items-center text-white gap-2'>Stay Tuend</p>
                     <ul className='flex items-center gap-4' >
                         <li><Image width={26} height={26} alt='facebook' src='/facebook.svg' /></li>
@@ -47,7 +50,6 @@ export default function Footer() {
                         <li><Image width={26} height={26} alt='x' src='/x.svg' /></li>
                         <li><Image width={26} height={26} alt='youtube' src='/youtube.svg' /></li>
                     </ul>
-                </div>
             </div>
             <div className='flex flex-col lg:pt-32 pt-24' >
                 <span className='bg-[#FFFFFF80] block w-full h-[1px]'></span>
