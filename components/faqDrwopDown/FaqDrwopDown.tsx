@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 
-type item = string
 interface FAQItem {
   question: string;
   title:string,
