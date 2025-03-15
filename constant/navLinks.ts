@@ -26,10 +26,10 @@ export const navLinks = [
     },
     {
         title: "ABOUT",
-        link:"ABOUT"
+        link:"about"
     },
     {
         title: "CONTACT US",
-        link:"CONTACT"
+        link:"contact"
     }
 ]

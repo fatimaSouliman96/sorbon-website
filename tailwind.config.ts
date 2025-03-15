@@ -28,11 +28,16 @@ export default {
         '1227min': {min: '1227px'},
         '1249max': {max: '1249px'},
         '1250min': {min: '1250px'},
+        '1213min': {min: '1213px'},
+        '1213max': {max: '1213px'},
       },
       backgroundImage: {
         'hero-categories-bg': "url('/categoroes.jfif')", 
         'hero-cities-bg': "url('/cities.jfif')", 
         'hero-home-bg': "url('/home.jfif')", 
+        'hero-about-bg': "url('/about.jfif')",
+        'hero-contact-bg': "url('/contact.jfif')"
+
       },
       boxShadow: {
         'custom-md': '0px 2px 4px 0px rgba(23, 19, 63, 0.25)',

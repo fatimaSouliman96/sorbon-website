@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div className='w-full' >
       <HeroCategories background='bg-hero-cities-bg' />
-      <div className='px-12 py-8 w-full' >
+      <div className='px-12 py-8 w-full bg-[#f0effa]' >
         <div className='flex justify-between items-center' >
           <h1 className='lg:text-xl text-lg  font-semibold text-secondary uppercase '>Advanced Excel: Power Query and Power Pivots Course</h1>
           <div className='relative w-[35%]' >

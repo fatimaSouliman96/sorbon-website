@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div className='w-full' >
       <HeroCategories background='bg-hero-cities-bg' />
-      <div className='px-12 py-8 w-full' >
+      <div className='px-12 py-8 w-full bg-[#f0effa]' >
         <div className='flex justify-between items-center' >
           <h1 className='lg:text-3xl text-2xl  font-semibold text-secondary uppercase '>Discover courses in Dubai</h1>
           <div className='relative w-[40%]' >

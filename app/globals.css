@@ -12,3 +12,20 @@
   border-bottom: 1px solid #17133F;
   font-weight: 600;
 }
+
+::-webkit-scrollbar {
+  width: 9px!important;
+  background-color: transparent!important;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #282561;
+  border-radius: 40px;
+  width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent!important;
+  width: 15px;
+}

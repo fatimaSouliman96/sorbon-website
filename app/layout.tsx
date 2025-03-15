@@ -26,10 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${workSans.className}  min-h-screen max-w-[90rem] m-auto`}
+        className={`${workSans.className} bg-[#f0effa] min-h-screen max-w-[90rem] grid grid-rows-[110px auto 110px] grid-cols-1  m-auto`}
       >
-        <main className="flex max-w-full flex-col row-start-2 items-center sm:items-start">
-          <NavBar />
+        <NavBar />
+        <main className="flex max-w-full flex-col items-center sm:items-start">
+          
           {children}
         </main>
         <Footer />

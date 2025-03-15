@@ -5,7 +5,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary lg:p-12 p-6">
-            <div className='grid 433max:grid-cols-1  585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3 grid-cols-1 914min:grid-cols-4 items-start'>
+            <div className='grid 433max:grid-cols-1  585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-4 items-start'>
                 <div className=" relative">
                     <Image src="/logo-white.svg" width={200} height={200} alt="sorbon-logo" />
                 </div>
@@ -33,14 +33,13 @@ export default function Footer() {
                     </li>
                     <li className='text-lg font-light flex items-center text-white gap-2'>
                         <Image width={24} height={24} src='/email.svg' alt="email" />
-                        <Link href="#" >sorbonne@sorbonneacademy.com</Link>
+                        <Link href="#" className='flex flex-wrap' >sorbonne@<p>sorbonneacademy</p><p>.com</p></Link>
                     </li>
                     <li className='text-lg font-light flex items-center text-white gap-3'>
                         <Image width={24} height={24} src='/location-footer.svg' alt="location" />
                         Šancová 356861 - 831 04 Bratislava, Slovakia
                     </li>
                 </ul>
-                
             </div>
             <div className='pt-8' >
                     <p className='text-lg font-light flex items-center text-white gap-2'>Stay Tuend</p>
