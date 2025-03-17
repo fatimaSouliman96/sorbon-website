@@ -46,34 +46,34 @@ export default function ClientsSlider() {
             >
 
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
                 <SwiperSlide>
-                        <Image className='rounded border p-2 border-secondary' src="/clients.png" fill alt="sorbon-logo" />
+                        <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
 
 

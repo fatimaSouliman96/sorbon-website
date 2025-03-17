@@ -1,7 +1,7 @@
 .veunesSwiper {
   width: 100%;
   max-width: 100%;
-  height: 350px;
+  height: 310px;
   padding-bottom: 1rem;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -106,12 +106,14 @@
   margin-left: 20rem !important;
   margin-top: 8rem !important;
   color: #17133F !important;
+  height: 10px;
 }
 
 .veunesSwiper .swiper-button-next {
   margin-right: 20rem !important;
   margin-top: 8rem !important;
   color: #17133F !important;
+  height: 10px;
 }
 
 /* Medium screens (tablets) */

@@ -47,7 +47,7 @@ export default function NavBar() {
                     return (
                         <li
                             key={ele.title}
-                            className={`text-secondary hover:border-secondary  text-sm border-b-2 transition-all duration-200  ${isActive ? `border-secondary font-bold` : "font-medium border-transparent"
+                            className={`text-secondary hover:border-secondary  text-sm border-b-2 transition-all duration-200  ${isActive ? `border-secondary font-bold` : "font-normal border-transparent"
                                 }`}
                         >
                             <Link href={ele.link}>{ele.title}</Link>

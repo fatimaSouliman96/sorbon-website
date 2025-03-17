@@ -6,7 +6,7 @@ import Footer from "@/components/footer/Footer";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
-  weight: ['400', '700']
+  weight: ['400', '700', '200', '300', '500', '600', '800']
 });
 
 
