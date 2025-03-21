@@ -36,7 +36,10 @@ export default {
         'hero-cities-bg': "url('/cities.jfif')", 
         'hero-home-bg': "url('/home.jfif')", 
         'hero-about-bg': "url('/about.jfif')",
-        'hero-contact-bg': "url('/contact.jfif')"
+        'hero-contact-bg': "url('/contact.jfif')",
+        'hero-terms-bg': "url('/terma.jfif')",
+        'hero-privacy-bg': "url('/privacy.jfif')",
+        'rectancle-bg': "url('/Rectangle.png')",
 
       },
       boxShadow: {

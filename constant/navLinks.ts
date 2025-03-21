@@ -22,14 +22,14 @@ export const navLinks = [
     },
     {
         title: "BLOG",
-        link:"BLOG"
+        link:"/blogs"
     },
     {
         title: "ABOUT",
-        link:"about"
+        link:"/about"
     },
     {
         title: "CONTACT US",
-        link:"contact"
+        link:"/contact"
     }
 ]

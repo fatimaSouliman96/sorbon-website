@@ -1,10 +1,47 @@
-import FAQ from '@/components/faqDrwopDown/FaqDrwopDown'
+import CourceTableContent from '@/components/courseTableContent/CourceTableContent'
+import FAQ, { FAQItem } from '@/components/faqDrwopDown/FaqDrwopDown'
 import HeroCategories from '@/components/heroCategories/HeroCategories'
+import { courseCoulmns } from '@/components/table/dataTable'
 import Table from '@/components/table/Table'
 import Image from 'next/image'
 import React from 'react'
 
 export default function page() {
+    const faqData: FAQItem[] = [
+      {
+        question: "Course Objectives:",
+        title: "By the end of the Process Management Mapping and Improvement training course, you will be able to:",
+        answer: [
+          {item: "Understand business processes and their components"},
+          {item:  "Apply process mapping, measurement and analysis methods and techniques"},
+          {item:  "Define processes using a subset of Business Process Modeling Notation (BPMN)"},
+          {item:  "Diagnose the health of a business process"},
+          {item:  "Use process improve techniques to transform business processes"},
+        ]
+      },
+      {
+        question: "Course Objectives:",
+        title: "By the end of the Process Management Mapping and Improvement training course, you will be able to:",
+        answer: [
+          {item: "Understand business processes and their components"},
+          {item:  "Apply process mapping, measurement and analysis methods and techniques"},
+          {item:  "Define processes using a subset of Business Process Modeling Notation (BPMN)"},
+          {item:  "Diagnose the health of a business process"},
+          {item:  "Use process improve techniques to transform business processes"},
+        ]
+      },
+      {
+        question: "Course Objectives:",
+        title: "By the end of the Process Management Mapping and Improvement training course, you will be able to:",
+        answer: [
+          {item: "Understand business processes and their components"},
+          {item:  "Apply process mapping, measurement and analysis methods and techniques"},
+          {item:  "Define processes using a subset of Business Process Modeling Notation (BPMN)"},
+          {item:  "Diagnose the health of a business process"},
+          {item:  "Use process improve techniques to transform business processes"},
+        ]
+      }
+    ];
     return (
         <div className='w-full  '>
             <HeroCategories background='bg-hero-categories-bg' />
@@ -20,8 +57,8 @@ export default function page() {
                     </div>
                     
                 </div>
-                <Table />
-                <FAQ />
+                <Table coursePage={true} columns={courseCoulmns} content={<CourceTableContent/>} />
+                <FAQ fag={faqData} />
             </div>
         </div>
     )

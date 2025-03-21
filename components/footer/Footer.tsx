@@ -5,26 +5,26 @@ import React from 'react'
 export default function Footer() {
     return (
         <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary lg:p-12 p-6">
-            <div className='grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-4 items-start'>
+            <div className='grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[auto_auto_auto_auto] gap-36 items-start'>
                 <div className=" relative">
                     <Image src="/logo-white.svg" width={200} height={200} alt="sorbon-logo" />
                 </div>
                 <div>
                     <p className='721min:text-xl pb-2 text-lg font-medium text-white' >Navigation</p>
                     <ul className='flex flex-col gap-6 pt-2'>
-                        <li className='721min:text-base text-sm font-extralight text-[#ffffffab]'>Home</li>
-                        <li className='721min:text-base text-sm font-extralight text-[#ffffffab]'>Public Courses</li>
-                        <li className='721min:text-base text-sm font-extralight text-[#ffffffab]'>Online Courses</li>
-                        <li className='721min:text-base text-sm font-extralight text-[#ffffffab]'>About</li>
-                        <li className='721min:text-base text-sm font-extralight text-[#ffffffab]'>Contact Us</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Home</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Public Courses</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Online Courses</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>About</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Contact Us</li>
                     </ul>
                 </div>
                 <div>
                     <p className='721min:text-xl pb-2 text-lg font-medium text-white' >Resources</p>
                     <ul className='flex flex-col gap-6 pt-2'>
-                        <li className='721min:text-base text-sm font-extralight text-[#ffffffab]'>Blog</li>
-                        <li className='721min:text-base text-sm font-extralight text-[#ffffffab]'>News</li>
-                        <li className='721min:text-base text-sm font-extralight text-[#ffffffab]'>Site Map</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Blog</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>News</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Site Map</li>
                     </ul>
                 </div>
                 <div>
@@ -58,10 +58,10 @@ export default function Footer() {
                     <span className='bg-[#ffffff65] block w-full h-[2px]'></span>
                 
                 <div className='flex items-center pt-4 justify-between' >
-                    <p className='721min:text-base text-sm font-extralight text-[#ffffffab]'>© 2023 Sorbonne Academy. All rights reserved.</p>
+                    <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>© 2023 Sorbonne Academy. All rights reserved.</p>
                     <div className='flex items-center gap-4'>
-                        <p className='721min:text-base text-sm font-extralight text-[#ffffffab]'>Terms and Conditions</p>
-                        <p className='721min:text-base text-sm font-extralight text-[#ffffffab]'>Privacy Policy</p>
+                        <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>Terms and Conditions</p>
+                        <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>Privacy Policy</p>
                     </div>
                 </div>
             </div>

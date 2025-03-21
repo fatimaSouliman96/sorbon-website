@@ -7,8 +7,8 @@ interface HeroProps {
 }
 const HeroCategories: React.FC<HeroProps> = ({ background }) => {
     return (
-        <div className={`${background} w-full bg-center bg-cover bg-no-repeat relative h-[65vh]`}>
-            <div className={` absolute top-0 left-0 w-full h-full pt-20`} >
+        <div className={`${background} w-full bg-center bg-cover bg-no-repeat relative  h-[65vh]`}>
+            <div className={`absolute top-0 left-0 w-full h-full pt-20`} >
                 <FiltterSearch />
             </div>
             <div className={`w-full h-full bg-[#17133FA6] `}>

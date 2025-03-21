@@ -7,7 +7,7 @@ export default function page() {
     <div className="w-full  " >
       <HeroCategories background='bg-hero-cities-bg' />
       <div className="w-full bg-[#f0effa] px-12 py-8 flex flex-col ">
-        <h1 className='lg:text-4xl text-3xll font-semibold text-secondary'>Featured Courses in Selected Cities</h1>
+        <h1 className='lg:text-4xl text-3xll font-semibold text-secondary uppercase'>Featured Courses in Selected Cities</h1>
         <div className="grid 433max:grid-cols-1  585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3 grid-cols-1 914min:grid-cols-4 gap-4 w-full pt-12" >
           <CardCity link="cities/city" title='Barcelona - Spain' height='h-[112px]' />
           <CardCity link="cities/city" title='Barcelona - Spain' height='h-[112px]' />

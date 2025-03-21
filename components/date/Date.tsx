@@ -2,11 +2,15 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
-const CustomDatePicker = () => {
+interface dateProps {
+  form?: boolean 
+}
+const CustomDatePicker: React.FC<dateProps> = ({form}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [currentDay, setCurrentDay] = useState(new Date().getDay());
   const calendarRef = useRef<HTMLDivElement>(null);
 
   // Close calendar when clicking outside
@@ -50,7 +54,7 @@ const CustomDatePicker = () => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="absolute right-2 top-1/2 -translate-y-1/2 w-5 h-5"
+        className={`absolute right-2 ${form ? "bottom-6" : "top-1/2"}  -translate-y-1/2 w-5 h-5`}
       >
         <Image width={20} height={20} src="/date.svg" alt="Calendar Icon" className="pointer-events-none" />
       </button>
@@ -60,8 +64,8 @@ const CustomDatePicker = () => {
         type="text"
         value={selectedDate || ""}
         readOnly
-        placeholder="Date"
-        className="w-full placeholder:text-white border-b border-white bg-transparent outline-none p-2 text-white cursor-pointer"
+        placeholder={form ? `${currentDay} / ${months[currentMonth].num} / ${currentYear}` : "Date" }
+        className={`w-full placeholder:text-white border-b border-white bg-transparent outline-none ${form ? "p-1" : "p-2"} text-white cursor-pointer`}
         onClick={() => setIsOpen(!isOpen)}
       />
 
@@ -75,7 +79,11 @@ const CustomDatePicker = () => {
                 <Image className="rotate-180" src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
               </button>
               <span className="text-base text-secondary font-semibold">{currentYear}</span>
-              <button onClick={() => setCurrentYear(currentYear + 1)} className="px-2 py-1 hover:bg-gray-200 rounded">
+              <button onClick={() => {{
+                setCurrentYear(currentYear + 1)
+                setSelectedDate(`${currentDay} / ${months[currentMonth].num} / ${currentYear + 1}`)
+                }}} 
+                className="px-2 py-1 hover:bg-gray-200 rounded">
                 <Image src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
               </button>
             </div>
@@ -89,7 +97,10 @@ const CustomDatePicker = () => {
               </button>
               <span className="text-base text-secondary font-semibold">{months[currentMonth].name}</span>
               <button
-                onClick={() => setCurrentMonth((currentMonth + 1) % 12)}
+                onClick={() => {{
+                   setCurrentMonth((currentMonth + 1) % 12)}
+                   setSelectedDate(`${currentDay} / ${months[((currentMonth + 1) % 12)].num} / ${currentYear}`);}
+                  }
                 className="px-2 py-1 hover:bg-gray-200 rounded"
               >
                 <Image src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
@@ -105,6 +116,7 @@ const CustomDatePicker = () => {
                 <button
                   key={day}
                   onClick={() => {
+                    setCurrentDay(day)
                     setSelectedDate(`${day} / ${months[currentMonth].num} / ${currentYear}`);
                     setIsOpen(false);
                   }}
