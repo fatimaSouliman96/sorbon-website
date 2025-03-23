@@ -3,17 +3,17 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 interface dateProps {
-  form?: boolean 
+  form?: boolean;
 }
-const CustomDatePicker: React.FC<dateProps> = ({form}) => {
+
+const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  const [currentDay, setCurrentDay] = useState(new Date().getDay());
+  const [currentDay, setCurrentDay] = useState(new Date().getDate());
   const calendarRef = useRef<HTMLDivElement>(null);
 
-  // Close calendar when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
@@ -30,97 +30,89 @@ const CustomDatePicker: React.FC<dateProps> = ({form}) => {
     };
   }, [isOpen]);
 
-  const getDaysInMonth = (month: number, year: number) => new Date(year, month + 1, 0).getDate();
+  useEffect(() => {
+    setSelectedDate(`${currentDay} / ${currentMonth + 1} / ${currentYear}`);
+  }, [currentMonth, currentYear]);
 
+  const getDaysInMonth = (month: number, year: number) => new Date(year, month + 1, 0).getDate();
   const daysInMonth = getDaysInMonth(currentMonth, currentYear);
+
   const months = [
-    { name: "January", num: 1 },
-    { name: "February", num: 2 },
-    { name: "March", num: 3 },
-    { name: "April", num: 4 },
-    { name: "May", num: 5 },
-    { name: "June", num: 6 },
-    { name: "July", num: 7 },
-    { name: "August", num: 8 },
-    { name: "September", num: 9 },
-    { name: "October", num: 10 },
-    { name: "November", num: 11 },
-    { name: "December", num: 12 },
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
   ];
 
   return (
-    <div className="relative w-full" ref={calendarRef}>
-      {/* Calendar Icon */}
+    <div className="relative z-30 w-full" ref={calendarRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`absolute right-2 ${form ? "bottom-6" : "top-1/2"}  -translate-y-1/2 w-5 h-5`}
+        className={`absolute right-2 ${form ? "bottom-6" : "top-1/2"} -translate-y-1/2 w-5 h-5`}
       >
         <Image width={20} height={20} src="/date.svg" alt="Calendar Icon" className="pointer-events-none" />
       </button>
 
-      {/* Input Field */}
       <input
         type="text"
         value={selectedDate || ""}
         readOnly
-        placeholder={form ? `${currentDay} / ${months[currentMonth].num} / ${currentYear}` : "Date" }
+        placeholder={form ? `${currentDay} / ${currentMonth + 1} / ${currentYear}` : "Date"}
         className={`w-full placeholder:text-white border-b border-white bg-transparent outline-none ${form ? "p-1" : "p-2"} text-white cursor-pointer`}
         onClick={() => setIsOpen(!isOpen)}
       />
 
-      {/* Calendar */}
       {isOpen && (
-        <div className="absolute left-0 mt-2 w-72 bg-white text-black rounded-lg shadow-lg p-4 z-10">
-          {/* Month & Year Navigation */}
-          <div className="flex items-center justify-between">
-            <div className="flex gap-3 justify-between items-center mb-2">
-              <button onClick={() => setCurrentYear(currentYear - 1)} className="px-2 py-1 hover:bg-gray-200 rounded">
-                <Image className="rotate-180" src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
-              </button>
-              <span className="text-base text-secondary font-semibold">{currentYear}</span>
-              <button onClick={() => {{
-                setCurrentYear(currentYear + 1)
-                setSelectedDate(`${currentDay} / ${months[currentMonth].num} / ${currentYear + 1}`)
-                }}} 
-                className="px-2 py-1 hover:bg-gray-200 rounded">
-                <Image src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
-              </button>
-            </div>
+        <div className="absolute z-50 left-0 mt-2 w-full bg-white text-black rounded-lg shadow-lg p-2">
+          <div className="flex items-center justify-between mb-2">
+            <button
+              onClick={() => {
+                if (currentMonth === 0) {
+                  setCurrentYear(currentYear - 1);
+                  setCurrentMonth(11);
+                } else {
+                  setCurrentMonth(currentMonth - 1);
+                }
+              }}
+              className="px-2 py-1 hover:bg-gray-200 rounded"
+            >
+              <Image className="rotate-180" src="/arrow-eylow.svg" width={12} height={12} alt="previous month" />
+            </button>
 
-            <div className="flex gap-3 justify-between items-center mb-2">
-              <button
-                onClick={() => setCurrentMonth((currentMonth + 11) % 12)}
-                className="px-2 py-1 hover:bg-gray-200 rounded"
-              >
-                <Image className="rotate-180" src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
-              </button>
-              <span className="text-base text-secondary font-semibold">{months[currentMonth].name}</span>
-              <button
-                onClick={() => {{
-                   setCurrentMonth((currentMonth + 1) % 12)}
-                   setSelectedDate(`${currentDay} / ${months[((currentMonth + 1) % 12)].num} / ${currentYear}`);}
-                  }
-                className="px-2 py-1 hover:bg-gray-200 rounded"
-              >
-                <Image src="/arrow-eylow.svg" width={12} height={12} alt="arrow" />
-              </button>
-            </div>
+            <span className="text-base text-secondary font-semibold">
+              {months[currentMonth]} {currentYear}
+            </span>
+
+            <button
+              onClick={() => {
+                if (currentMonth === 11) {
+                  setCurrentYear(currentYear + 1);
+                  setCurrentMonth(0);
+                } else {
+                  setCurrentMonth(currentMonth + 1);
+                }
+              }}
+              className="px-2 py-1 hover:bg-gray-200 rounded"
+            >
+              <Image src="/arrow-eylow.svg" width={12} height={12} alt="next month" />
+            </button>
           </div>
 
-          {/* Days Grid */}
-          <div className="grid grid-cols-7 gap-2">
+          <div className="w-full h-[1px] bg-[#17133f57]"></div>
+
+          <div className="grid grid-cols-7 gap-1 mt-2">
             {[...Array(daysInMonth)].map((_, index) => {
               const day = index + 1;
               return (
                 <button
                   key={day}
                   onClick={() => {
-                    setCurrentDay(day)
-                    setSelectedDate(`${day} / ${months[currentMonth].num} / ${currentYear}`);
+                    setCurrentDay(day);
+                    setSelectedDate(`${day} / ${currentMonth + 1} / ${currentYear}`);
                     setIsOpen(false);
                   }}
-                  className="w-10 h-10 flex items-center justify-center hover:bg-gray-300 rounded-full"
+                  className={`w-8 h-8 flex items-center justify-center rounded-full ${
+                    day === currentDay ? "bg-blue-500 text-white" : "hover:bg-gray-300"
+                  }`}
                 >
                   {day}
                 </button>
@@ -134,6 +126,8 @@ const CustomDatePicker: React.FC<dateProps> = ({form}) => {
 };
 
 export default CustomDatePicker;
+
+
 
 
 

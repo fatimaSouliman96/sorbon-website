@@ -2,16 +2,7 @@ export const navLinks = [
     {
         title: "HOME",
         link:"/"
-    },
-    {
-        title: "ONLINE COURSES",
-        link:"COURSES"
-    },
-    {
-        title: "PUBLIC COURSES",
-        link:"COURSES"
-    },
-    
+    },  
     {
         title: "CATEGORIES",
         link:"/categories"

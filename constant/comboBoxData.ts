@@ -32,16 +32,7 @@ export const comboBoxData: comboBoxType[] = [
         ]
 
     },
-    {
-
-        lable: "Category",
-        options: [
-            {
-                options: "Category",
-                value: "category"
-            }
-        ]
-    },
+    
 
     
     // {

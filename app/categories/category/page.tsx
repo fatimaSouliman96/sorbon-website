@@ -22,9 +22,9 @@ export default function page() {
           <CourseCity />
         </div>
         <div className='pt-14' >
-          <h1 className='lg:text-4xl text-3xl  font-semibold text-secondary uppercase '>recommended for you</h1>
+          <h1 className='lg:text-2xl text-xl  font-semibold text-secondary uppercase '>recommended for you</h1>
           <p className='text-sm font-normal pt-2 text-secondary'>Handpicked courses just for you</p>
-          <div className='433max:grid-cols-1 grid-cols-1 1249max:grid-cols-2 1250min:grid-cols-3 grid gap-4 w-full pt-8'>
+          <div className=' grid-cols-1 1249max&600min:grid-cols-2 1250min:grid-cols-3 grid gap-4 w-full pt-8'>
             <CourseCard />
             <CourseCard />
             <CourseCard />

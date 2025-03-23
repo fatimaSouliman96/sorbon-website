@@ -14,7 +14,7 @@ const Table:React.FC<TableProps> = ({columns, content, coursePage}) => {
                     <tr className="border border-[#cbd5e1]  " >
                         {
                             columns.map((col, index) => {
-                                return <th key={index} className="px-3 py-2 uppercase text-base font-medium border-r-0 md:text-sm ">{col}</th>
+                                return <th key={index} className="px-3 py-3 uppercase text-lg font-medium border-r-0 md:text-sm ">{col}</th>
                             })
                         }
                         

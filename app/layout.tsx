@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Work_Sans } from "next/font/google";
 import NavBar from "@/components/NavBar/NavBar";
 import Footer from "@/components/footer/Footer";
+import { Work_Sans } from "next/font/google";
 
 const workSans = Work_Sans({
-  subsets: ["latin"],
-  weight: ['400', '700', '200', '300', '500', '600', '800']
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
 });
 
 
@@ -25,12 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://cdn.example.com/fonts/MadaniArabic-Medium.css" rel="stylesheet" />
+      </head>
       <body
         className={`${workSans.className} bg-[#f0effa] min-h-screen max-w-[90rem] grid grid-rows-[110px auto 110px] grid-cols-1  m-auto`}
       >
         <NavBar />
         <main className="flex max-w-full flex-col items-center sm:items-start">
-          
+
           {children}
         </main>
         <Footer />

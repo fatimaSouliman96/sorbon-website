@@ -133,15 +133,28 @@
 
   .veunesSwiper .swiper-button-prev,
   .veunesSwiper .swiper-button-next {
-    margin: 0 !important;
+    /* margin: 0 !important; */
     transform: translateY(-50%);
   }
 
   .veunesSwiper .swiper-button-prev {
-    left: 10px !important;
+    left: -150px !important;
   }
 
   .veunesSwiper .swiper-button-next {
-    right: 10px !important;
+    right: -150px !important;
   }
+}
+@media (max-width: 448px) {
+  .veunesSwiper {
+    height: 410px!important;
+  }
+  .veunesSwiper .swiper-button-prev,
+  .veunesSwiper .swiper-button-next {
+    margin-top: 10rem !important;
+
+   
+  }
+
+ 
 }

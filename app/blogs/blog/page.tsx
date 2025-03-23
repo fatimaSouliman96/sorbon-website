@@ -9,7 +9,7 @@ export default function page() {
             <div className='w-full flex flex-col gap-8 px-16 py-8' >
                 <h1 className='lg:text-4xl text-3xll font-semibold text-secondary uppercase'>10 Hilarious Cartoons That Depict Real-Life Problems of Programmers</h1>
                 <div className='w-full h-[288px] relative'>
-                    <Image src="/categoroes.jfif" alt='blog' fill />
+                    <Image src="/show-blog.jpg" alt='blog' fill />
                 </div>
                 <div className='w-[251px] self-end flex items-center '>
                     <p className='text-[13px] rounded-l-md w-1/2 text-center font-semibold text-secondary bg-[#EBF2FE] p-2' >Design tools</p>

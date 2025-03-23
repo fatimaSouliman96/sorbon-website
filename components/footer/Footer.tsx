@@ -5,7 +5,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary lg:p-12 p-6">
-            <div className='grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[auto_auto_auto_auto] gap-36 items-start'>
+            <div className='grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[auto_auto_auto_auto] lg:gap-36 md:gap-32 gap-8 items-start'>
                 <div className=" relative">
                     <Image src="/logo-white.svg" width={200} height={200} alt="sorbon-logo" />
                 </div>

@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function ContactInfo() {
     return (
-        <div className='w-full flex gap-14 lg:w-[30%]' >
+        <div className='w-full flex gap-14 lg:w-[32%]' >
             <span className='mt-16 h-[367px] block w-[1px] bg-[#17133f59]' ></span>
             <div className='w-full'>
                 <div>
@@ -35,7 +35,7 @@ export default function ContactInfo() {
                         </div>
                         <div>
                             <p className='text-lg text-secondary font-normal' >Email</p>
-                            <div className='text-lg text-[#17133FB2] font-normal flex flex-wrap'>sorbonne@<p>sorbonneacademy</p><p>.com</p></div>
+                            <div className='text-lg shrink-0 text-[#17133FB2] font-normal flex flex-wrap'>sorbonne@<p>sorbonneacademy</p><p>.com</p></div>
                         </div>
                     </div>
                 </div>

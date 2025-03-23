@@ -13,6 +13,18 @@
   font-weight: 600;
 }
 
+@font-face {
+  font-family: 'Madani Arabic Medium';
+  src: url('https://cdn.example.com/fonts/MadaniArabic-Medium.woff2') format('woff2'),
+       url('https://cdn.example.com/fonts/MadaniArabic-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Apply using Tailwind */
+.font-madani {
+  font-family: 'Madani Arabic Medium', sans-serif;
+}
 ::-webkit-scrollbar {
   width: 9px!important;
   background-color: transparent!important;

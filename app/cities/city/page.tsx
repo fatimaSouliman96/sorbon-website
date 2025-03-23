@@ -16,15 +16,15 @@ export default function page() {
             <input type='search' placeholder='Search For keywords' className='text-sm font-normal w-full text-secondary pl-8 outline-none border-b-[1px] border-secondary bg-transparent' />
           </div>
         </div>
-        <div className='w-full pt-10 flex flex-col gap-3' >
+        <div className='w-full pt-6 flex flex-col gap-2' >
           <CourseCity />
           <CourseCity />
           <CourseCity />
         </div>
         <div className='pt-14' >
-          <h1 className='lg:text-4xl text-3xl  font-semibold text-secondary uppercase '>recommended for you</h1>
-          <p className='text-sm font-normal pt-2 text-secondary'>Handpicked courses just for you</p>
-          <div className='433max:grid-cols-1 grid-cols-1 1249max:grid-cols-2 1250min:grid-cols-3 grid gap-4 w-full pt-8'>
+          <h1 className='lg:text-2xl text-xl  font-semibold text-secondary uppercase '>recommended for you</h1>
+          <p className='text-base font-normal pt-2 text-secondary'>Handpicked courses just for you</p>
+          <div className='604max:grid-cols-1 876max&605min:grid-cols-2  grid-cols-3 grid gap-4 w-full pt-8'>
             <CourseCard  />
             <CourseCard  />
             <CourseCard  />

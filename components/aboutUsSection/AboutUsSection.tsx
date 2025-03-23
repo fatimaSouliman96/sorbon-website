@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function AboutUsSection() {
     return (
-        <div className='lg:flex-row md:flex-row flex-col flex bg-[#DDDBEF] w-full px-20 py-12'>
+        <div className='lg:flex-row gap-4 md:flex-row flex-col flex bg-[#DDDBEF] w-full px-[4.5rem] py-12'>
             <div className='lg:w-[50%] md:w-[50%] w-full'>
                 <h1 className='text-[32px] font-semibold text-secondary'>ABOUT US</h1>
                 <p className='text-[28px] font-normal text-secondary pt-12 leading-10 pr-4'>Our goal is to take your practical learning experience to a whole other level and be successful Together.</p>

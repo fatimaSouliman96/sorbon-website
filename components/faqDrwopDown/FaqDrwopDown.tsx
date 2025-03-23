@@ -23,13 +23,13 @@ const FAQ:React.FC<FaqProps> = ({fag}) => {
   };
 
   return (
-    <div className="max-w-full pt-4">
+    <div className="max-w-full pt-4 w-full md:w-3/4 lg:w-3/4">
       {fag[0].title && <h2 className=" text-2xl text-secondary font-bold mb-4 uppercase">about course</h2>}
       <ul className="space-y-2">
         {fag.map((item, index) => (
           <li key={index} className="rounded overflow-hidden">
             <button
-              className="w-full text-secondary text-lg font-medium md:w-3/4 lg:w-3/4 flex items-center justify-between text-left p-3 bg-[#E0E0F5] hover:bg-[#dcdcf5]"
+              className="w-full text-secondary text-lg font-medium  flex items-center justify-between text-left p-3 bg-[#E0E0F5] hover:bg-[#dcdcf5]"
               onClick={() => toggleDropdown(index)}
             >
               {item.question}
@@ -39,15 +39,15 @@ const FAQ:React.FC<FaqProps> = ({fag}) => {
                <Image src="/arrow-right-blue.svg" alt="arrow-right-blue" width={10} height={10} />}
             </button>
             {openIndex === index && (
-              <>{item.title && item.answer && <ul className="p-3 border-t ">
+              <>{item.title && item.answer && <ul className="p-3 w-full border-t flex flex-col gap-2 ">
                {item.title && <p className="text-base font-medium" >{item.title}</p>}
                 {item.answer && item.answer.map(ans => {
-                return <li key={ans.item} className="flex gap-2 text-base font-light" >
+                return <li key={ans.item} className="flex gap-2 text-base font-normal" >
                   <span className="w-1 self-center h-1 bg-secondary rounded-full" ></span>
                   {ans.item}</li>
               })}
               </ul>}
-              <p className="flex gap-2 text-base font-light text-secondary pt-4 leading-7" >{item.sigleAnswer}</p>
+              <p className="w-full flex gap-2 text-base font-light text-secondary pt-4 leading-7" >{item.sigleAnswer}</p>
               </>
             )}
           </li>

@@ -7,7 +7,7 @@ export default function page() {
     <div className="w-full  " >
       <HeroCategories background='bg-hero-cities-bg' />
       <div className="w-full bg-[#f0effa] px-12 py-8 flex flex-col ">
-        <h1 className='lg:text-4xl text-3xll font-semibold text-secondary uppercase'>Featured Courses in Selected Cities</h1>
+        <h1 className='lg:text-2xl text-xl font-semibold text-secondary uppercase'>Featured Courses in Selected Cities</h1>
         <div className="grid 433max:grid-cols-1  585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3 grid-cols-1 914min:grid-cols-4 gap-4 w-full pt-12" >
           <CardCity link="cities/city" title='Barcelona - Spain' height='h-[112px]' />
           <CardCity link="cities/city" title='Barcelona - Spain' height='h-[112px]' />
@@ -31,7 +31,7 @@ export default function page() {
           
           
         </div>
-        <button className='border-1 border p-2 w-[200px] m-auto mt-28 border-[#322A8D99] rounded-[8px] text-[#322A8D99] text-lg font-medium ' >
+        <button className='border-2  p-2 w-[200px] m-auto mt-8 border-[#322A8D99] rounded-[8px] text-[#322a8d] text-lg font-medium ' >
           All Cities
         </button>
       </div>
