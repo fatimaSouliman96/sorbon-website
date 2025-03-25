@@ -26,7 +26,7 @@ const PopUp: React.FC<PopUpProps> = ({close, formNum}) => {
 
     return (
         <tr
-        className="absolute left-0 w-full h-screen z-50 pt-8 bg-black/50 flex justify-center items-start"
+        className="absolute left-0 w-full h-screen z-50 pt-8 bg-black/50 flex justify-center items-start overflow-y-scroll"
         style={{ top: `${topPosition}px` }}
           
         >

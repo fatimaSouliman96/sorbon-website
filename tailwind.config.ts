@@ -34,6 +34,7 @@ export default {
         '1213min': {min: '1213px'},
         '1213max': {max: '1213px'},
         '1015max': {max: '1015px'},
+        '1038max': {max: '1038px'},
       },
       backgroundImage: {
         'hero-categories-bg': "url('/categoroes.jfif')", 
@@ -43,7 +44,7 @@ export default {
         'hero-contact-bg': "url('/contact.jfif')",
         'hero-terms-bg': "url('/terma.jfif')",
         'hero-privacy-bg': "url('/privacy.jfif')",
-        'rectancle-bg': "url('/Rectangle.png')",
+        'rectancle-bg': "url('/Rectangle.png')"
 
       },
       boxShadow: {

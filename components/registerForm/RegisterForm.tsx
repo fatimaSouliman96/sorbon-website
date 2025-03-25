@@ -5,21 +5,21 @@ import Image from "next/image";
 interface RegisterProps {
     close: (value: boolean) => void;
 }
-const RegisterForm: React.FC<RegisterProps> = ({close}) => {
+const RegisterForm: React.FC<RegisterProps> = ({ close }) => {
 
 
     return (
         <>
-            <div className="w-full bg-secondary rounded-t-3xl p-4" >
-                <div className="w-full flex items-center justify-end gap-[30rem]" >
-                    <h1 className="text-2xl text-white font-semibold text-center">Register Form</h1>
+            <div className="w-full bg-secondary rounded-t-3xl p-4 " >
+                <div className="w-full flex items-center justify-end 721max:gap-[11rem] gap-[30rem]" >
+                    <h1 className="text-2xl text-white font-semibold text-center">Enquire Form</h1>
                     <div className='relative' onClick={() => close(false)} >
-                        <Image className="cursor-pointer"  src="/close.svg" alt='close' width={21} height={21} />
+                        <Image className="cursor-pointer" src="/close.svg" alt='close' width={21} height={21} />
                     </div>
                 </div>
 
                 <p className="text-base text-white font-medium text-center" >Organizing and Behavioral Skills for Administrative Professionals and Executive Secretaries Course</p>
-                <div className="w-[60%] m-auto grid grid-cols-4 gap-12 pt-4 items-center ">
+                <div className="1038max:w-full w-[60%] m-auto grid 721max:grid-cols-2  433max:grid-cols-1  grid-cols-1 721min:grid-cols-4 gap-12 pt-4 items-center ">
                     <div>
                         <label className="text-sm font-semibold text-white">Start Date</label>
                         <CustomDatePicker form={true} />
@@ -67,7 +67,7 @@ const RegisterForm: React.FC<RegisterProps> = ({close}) => {
                 </div>
                 <div className="w-full pt-1 " >
                     <p className="text-2xl text-secondary font-semibold text-left">Company Information</p>
-                    <div className="grid grid-cols-4 pt-1 gap-x-8 gap-y-1">
+                    <div className="grid 721max:grid-cols-2 grid-cols-4 pt-1 gap-x-8 gap-y-1">
                         <div className="col-span-2">
                             <input placeholder="Company Name*" className="placeholder:text-secondary placeholder:text-sm placeholder:font-semibold text-sm mt-2 w-full font-semibold text-secondary p-1 bg-transparent border-b-secondary border-b outline-none" type="text" />
                         </div>

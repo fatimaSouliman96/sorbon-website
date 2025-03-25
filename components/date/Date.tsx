@@ -32,7 +32,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
 
   useEffect(() => {
     setSelectedDate(`${currentDay} / ${currentMonth + 1} / ${currentYear}`);
-  }, [currentMonth, currentYear]);
+}, [currentDay, currentMonth, currentYear]);
 
   const getDaysInMonth = (month: number, year: number) => new Date(year, month + 1, 0).getDate();
   const daysInMonth = getDaysInMonth(currentMonth, currentYear);
@@ -43,7 +43,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
   ];
 
   return (
-    <div className="relative z-30 w-full" ref={calendarRef}>
+    <div className="relative z-30 " ref={calendarRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -62,7 +62,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
       />
 
       {isOpen && (
-        <div className="absolute z-50 left-0 mt-2 w-full bg-white text-black rounded-lg shadow-lg p-2">
+        <div className="absolute z-50 left-0 mt-2 w-[250px] bg-white text-black rounded-lg shadow-lg p-2">
           <div className="flex items-center justify-between mb-2">
             <button
               onClick={() => {
