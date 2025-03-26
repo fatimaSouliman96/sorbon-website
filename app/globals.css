@@ -12,6 +12,9 @@
   border-bottom: 1px solid #17133F;
   font-weight: 600;
 }
+.scal:hover{
+  transform: scale(1.04);
+}
 
 @font-face {
   font-family: 'Madani Arabic Medium';

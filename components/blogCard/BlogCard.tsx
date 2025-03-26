@@ -10,7 +10,7 @@ export default function BlogCard() {
                 <p className='text-[13px] rounded-l-md w-1/2 text-center font-semibold text-secondary bg-[#EBF2FE] p-2' >Design tools</p>
                 <p className='text-[13px] rounded-r-md w-1/2 text-center font-semibold text-secondary bg-white p-2' >AUGust 13, 2021 </p>
             </div>
-            <h1 className='transform transition-transform duration-200 hover:scale-110 pt-4 lg:text-[28px] text-base font-bold text-secondary'>10 Hilarious Cartoons That Depict Real-Life Problems of Programmers</h1>
+            <h1 className='transform transition-transform duration-200 scal pt-4 lg:text-[28px] text-base font-bold text-secondary'>10 Hilarious Cartoons That Depict Real-Life Problems of Programmers</h1>
             <p className='text-sm font-normal text-secondary lg:pr-96 pr-8 leading-[150%]'>Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.</p>
         </div>
 

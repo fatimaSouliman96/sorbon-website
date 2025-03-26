@@ -9,7 +9,7 @@ export default function CourseCity() {
             <h1 className='text-lg font-semibold text-white ' >
                 Advanced Heat Exchanger Design with HTRI Software
             </h1>
-            <div className='transform transition-transform duration-200 hover:scale-110 w-7 h-w-8 rounded-full bg-[#F0EFFA66] flex justify-center items-center' >
+            <div className='transform transition-transform duration-200 scal w-7 h-w-8 rounded-full bg-[#F0EFFA66] flex justify-center items-center' >
                 <Image src="/arrow-right-white.svg" width={7} height={7} alt="arrow-right-white" />
             </div>
         </Link>

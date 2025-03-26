@@ -29,7 +29,7 @@ export default function RootLayout({
         <link href="https://cdn.example.com/fonts/MadaniArabic-Medium.css" rel="stylesheet" />
       </head>
       <body
-        className={`${workSans.className} bg-[#f0effa] min-h-screen max-w-[90rem] grid grid-rows-[110px auto 110px] grid-cols-1  m-auto`}
+        className={`${workSans.className} bg-[#f0effa] min-h-screen max-w-full grid grid-rows-[110px auto 110px] grid-cols-1  m-auto`}
       >
         <NavBar />
         <main className="flex max-w-full flex-col items-center sm:items-start">

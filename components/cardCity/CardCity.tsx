@@ -11,7 +11,7 @@ interface CardCity {
 const CardCity: React.FC<CardCity> = ({ title, height, category, link }) => {
   
   return (
-    <Link href={link} className={`transform transition-transform duration-200 hover:scale-110 relative rounded shadow-custom-md  ${height} p-2  `}  >
+    <Link href={link} className={`transform transition-transform duration-200 scal relative rounded shadow-custom-md  ${height} p-2  `}  >
         <div className=" w-full h-full">
           <Image className={` rounded `} fill src={category ? "/categore-card.jpg" : `/cite.jpg`} alt="category" />
           <div className={`rounded absolute  w-full h-full z-0 bg-[#17133FE5] top-0 left-0`}>

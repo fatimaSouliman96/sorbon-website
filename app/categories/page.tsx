@@ -13,7 +13,7 @@ export default function page() {
           <CardCity link="categories/category" category={true} title='Advanced Heat Exchanger Design with HTRI Software' height='h-[184px]' />
           <CardCity link="categories/category" category={true} title='Advanced Heat Exchanger Design with HTRI Software' height='h-[184px]' />
         </div>
-        <button className='transform transition-transform duration-200 hover:scale-110 border-2  p-2 w-[200px] m-auto mt-8 border-[#322A8D99] rounded-[8px] text-[#322a8d] text-lg font-medium ' >
+        <button className='transform transition-transform duration-200 scal border-2  p-2 w-[200px] m-auto mt-8 border-[#322A8D99] rounded-[8px] text-[#322a8d] text-lg font-medium ' >
           All Categories
         </button>
       </div>

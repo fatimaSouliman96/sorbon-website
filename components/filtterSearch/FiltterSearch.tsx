@@ -31,8 +31,8 @@ export default function FiltterSearch() {
                             ]} />
                     
                     <div className='flex items-center   gap-4'>
-                        <button className='bg-white transform transition-transform duration-200 hover:scale-110 text-secondary w-1/2 rounded h-[40px]' >Search</button>
-                        <button className='bg-transparent transform transition-transform duration-200 hover:scale-110 text-white border border-white rounded w-1/2 h-[40px]' >Clear</button>
+                        <button className='bg-white transform transition-transform duration-200 scal text-secondary w-1/2 rounded h-[40px]' >Search</button>
+                        <button className='bg-transparent transform transition-transform duration-200 scal text-white border border-white rounded w-1/2 h-[40px]' >Clear</button>
                     </div>
                 </div>
 
