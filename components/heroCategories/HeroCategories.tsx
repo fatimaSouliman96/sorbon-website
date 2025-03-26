@@ -7,7 +7,7 @@ interface HeroProps {
 }
 const HeroCategories: React.FC<HeroProps> = ({ background }) => {
     return (
-        <div className={`${background} w-full bg-center bg-cover bg-no-repeat relative lg:h-[60vh] h-[100vh]`}>
+        <div className={`${background} w-full bg-center bg-cover bg-no-repeat relative lg:h-[60vh] h-[77vh]`}>
             <div className={`absolute top-0 left-0 w-full h-full pt-20`} >
                 <FiltterSearch />
             </div>
