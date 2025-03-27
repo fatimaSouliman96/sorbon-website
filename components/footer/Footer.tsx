@@ -4,10 +4,19 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary p-2">
-            <div className='grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[200px_150px_80px_auto] lg:gap-36 md:gap-32 gap-8 items-start'>
-                <div className=" relative">
-                    <Image src="/logo-white.svg" width={200} height={200} alt="sorbon-logo" />
+        <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary py-8 px-12">
+            <div className='grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[200px_150px_80px_auto] lg:gap-[13%] md:gap-32 gap-8  items-start'>
+                <div className=" relative flex flex-col gap-20">
+                    <Image src="/logo-white.svg" width={150} height={200} alt="sorbon-logo" />
+                    <div>
+                        <p className='text-lg font-light flex items-center text-white gap-2'>Stay Tuend</p>
+                        <ul className='flex items-center gap-4 pt-1' >
+                            <li><Image width={26} height={26} alt='facebook' src='/facebook.svg' /></li>
+                            <li><Image width={26} height={26} alt='insta' src='/insta.svg' /></li>
+                            <li><Image width={26} height={26} alt='x' src='/x.svg' /></li>
+                            <li><Image width={26} height={26} alt='youtube' src='/youtube.svg' /></li>
+                        </ul>
+                    </div>
                 </div>
                 <div>
                     <p className='721min:text-xl pb-2 text-lg font-medium text-white' >Navigation</p>
@@ -45,18 +54,10 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <div>
-                <p className='text-lg font-light flex items-center text-white gap-2'>Stay Tuend</p>
-                <ul className='flex items-center gap-4 pt-1' >
-                    <li><Image width={26} height={26} alt='facebook' src='/facebook.svg' /></li>
-                    <li><Image width={26} height={26} alt='insta' src='/insta.svg' /></li>
-                    <li><Image width={26} height={26} alt='x' src='/x.svg' /></li>
-                    <li><Image width={26} height={26} alt='youtube' src='/youtube.svg' /></li>
-                </ul>
-            </div>
+
             <div className='flex flex-col lg:pt-4 pt-4' >
-                    <span className='bg-[#ffffff65] block w-full h-[2px]'></span>
-                
+                <span className='bg-[#ffffff65] block w-full h-[2px]'></span>
+
                 <div className='flex items-center pt-4 justify-between' >
                     <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>© 2023 Sorbonne Academy. All rights reserved.</p>
                     <div className='flex items-center gap-4'>

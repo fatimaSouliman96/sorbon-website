@@ -85,7 +85,7 @@ export default function NavBar() {
 
             {/* Buttons */}
             <div className="flex gap-2 items-center">
-                <button className={`font-madani text-secondary border-secondary sm:hidden hidden md:hidden justify-center lg:flex items-center w-40 text-lg font-normal cursor-pointer border-2 p-3  rounded-lg `}>
+                <button className={`font-madani text-secondary border-secondary sm:hidden hidden md:hidden justify-center lg:flex items-center w-32 text-lg font-normal cursor-pointer border-2 p-1 rounded-lg `}>
                     الدورات بالعربية
                 </button>
                 <button onClick={() => setOpen(!open)} className="sm:flex flex md:flex lg:hidden flex-col gap-2 w-8">
