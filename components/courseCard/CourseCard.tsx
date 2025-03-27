@@ -24,11 +24,11 @@ const CourseCard: React.FC<CourseCardProps> = ({ index = 0.1 , length = 0 }) => 
                 Mastering Conflict Resolution and Effective Communication with Difficult Personalities
                 </p>
                 <div className={`flex items-center gap-5 lg:pt-4 `}>
-                    <div className='uppercase text-white text-xs flex items-center gap-1' >
+                    <div className='uppercase text-white text-sm flex items-center gap-1' >
                         <Image src={'/location.svg'} alt='location' width={20} height={20}/>
                         london
                     </div>
-                    <div className='flex text-white text-xs items-center gap-1' >
+                    <div className='flex text-white text-sm items-center gap-1' >
                         <Image src={'/celander.svg'} alt='celander' width={20} height={20}/>
                         25-01-2025
                     </div>

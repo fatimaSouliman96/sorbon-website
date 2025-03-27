@@ -4,8 +4,8 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary lg:p-12 p-6">
-            <div className='grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[auto_auto_auto_auto] lg:gap-36 md:gap-32 gap-8 items-start'>
+        <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary p-2">
+            <div className='grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[200px_150px_80px_auto] lg:gap-36 md:gap-32 gap-8 items-start'>
                 <div className=" relative">
                     <Image src="/logo-white.svg" width={200} height={200} alt="sorbon-logo" />
                 </div>
@@ -47,14 +47,14 @@ export default function Footer() {
             </div>
             <div>
                 <p className='text-lg font-light flex items-center text-white gap-2'>Stay Tuend</p>
-                <ul className='flex items-center gap-4 pt-2' >
+                <ul className='flex items-center gap-4 pt-1' >
                     <li><Image width={26} height={26} alt='facebook' src='/facebook.svg' /></li>
                     <li><Image width={26} height={26} alt='insta' src='/insta.svg' /></li>
                     <li><Image width={26} height={26} alt='x' src='/x.svg' /></li>
                     <li><Image width={26} height={26} alt='youtube' src='/youtube.svg' /></li>
                 </ul>
             </div>
-            <div className='flex flex-col lg:pt-10 pt-8' >
+            <div className='flex flex-col lg:pt-4 pt-4' >
                     <span className='bg-[#ffffff65] block w-full h-[2px]'></span>
                 
                 <div className='flex items-center pt-4 justify-between' >
