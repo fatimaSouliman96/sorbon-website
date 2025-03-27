@@ -7,13 +7,13 @@ interface HeroProps {
 }
 const HeroCategories: React.FC<HeroProps> = ({ background }) => {
     return (
-        <div className={`${background} w-full bg-center bg-cover bg-no-repeat relative lg:h-[62vh] h-[77vh]`}>
+        <div className={`${background} w-full bg-center bg-cover bg-no-repeat relative z-[-2] max-h-fit`}>
 
-            <div className={`absolute top-0 left-0 w-full h-full pt-32`} >
-                <h1 className='lg:text-2xl text-xl font-semibold text-white text-center uppercase'>Discover Knowledge That Transforms Your Future</h1>
+            <div className={`flex flex-col items-center w-full h-fit pb-6 pt-32`} >
+                <h1 className='lg:text-2xl pt-2 text-xl font-semibold text-white text-center uppercase'>Discover Knowledge That Transforms Your Future</h1>
                 <FiltterSearch />
             </div>
-            <div className={`w-full h-full bg-[#17133FA6] `}>
+            <div className={`absolute top-0 left-0 w-full h-full z-[-1] bg-[#17133FA6] `}>
             </div>
         </div>
     )

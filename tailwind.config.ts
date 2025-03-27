@@ -33,8 +33,11 @@ export default {
         '1250min': {min: '1250px'},
         '1213min': {min: '1213px'},
         '1213max': {max: '1213px'},
+        '1100max': {max: '1100px'},
         '1015max': {max: '1015px'},
         '1038max': {max: '1038px'},
+        '713max': {max: '713px'},
+        '688max': {max: '688px'},
       },
       backgroundImage: {
         'hero-categories-bg': "url('/categoroes.jfif')", 

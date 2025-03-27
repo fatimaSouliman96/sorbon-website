@@ -4,9 +4,9 @@ import TransformCard from '../transformCard/TransformCard'
 export default function Upcoming() {
   
   return (
-    <div className='bg-[#f0effa] px-10 w-full  py-4' >
+    <div className='bg-[#f0effa] px-10 w-full  pb-4 pt-8' >
         <h1 className='lg:text-2xl text-xl font-semibold text-secondary uppercase' >Discover Knowledge That Transforms Your Future</h1>
-        <div className='433max:grid-cols-1 grid-cols-1 lg:grid-cols-2 grid gap-4 w-full pt-8'>
+        <div className='433max:grid-cols-1 grid-cols-1 lg:grid-cols-2 grid gap-4 w-full pt-4'>
            <TransformCard index={0} length={10} />
            <TransformCard index={1} length={10} />
            <TransformCard index={2} length={10} />

@@ -38,7 +38,7 @@ export default function VeunesSlider() {
         rotate: 0,
         stretch: 0,
         depth: 300, // Increase depth for better effect
-        modifier: 0.6,
+        modifier: 0.7,
         slideShadows: false, // Keep clean look
       }}
       pagination={{ clickable: true }}
