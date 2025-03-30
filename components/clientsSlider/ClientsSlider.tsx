@@ -23,6 +23,7 @@ export default function ClientsSlider() {
                 navigation={true}
                 modules={[Navigation, Autoplay]}
                 loop={true}
+                initialSlide={(10/2)}
                 autoplay={{ delay: 6000, disableOnInteraction: false }}
                 className="mySwiper"
                 breakpoints={{
@@ -36,15 +37,14 @@ export default function ClientsSlider() {
                         },
                         721: { // For screens >= 1075px
                           slidesPerView: 3,
-                          spaceBetween: 20,
+                          spaceBetween: 10,
                         },
                         913: { // For screens >= 1075px
                           slidesPerView: 5,
-                          spaceBetween: 25,
+                          spaceBetween: 10,
                         },
                       }}
             >
-
                 <SwiperSlide>
                         <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
@@ -75,9 +75,6 @@ export default function ClientsSlider() {
                 <SwiperSlide>
                         <Image className='rounded ' src="/clients.png" fill alt="sorbon-logo" />
                 </SwiperSlide>
-
-
-
             </Swiper>
 
         </>

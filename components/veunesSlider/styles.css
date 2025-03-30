@@ -10,11 +10,10 @@
   position: relative;
   display: flex;
   height: 184px;
-  width: 297px;
+  width: 100%;
   justify-content: center;
   align-items: center;
   transition: all 0.4s ease-in-out;
-  transform: scale(0.8);
   /* Make non-center slides smaller */
   position: relative;
 }
@@ -44,8 +43,10 @@
 }
 
 /* Make center slide larger and full opacity */
-.veunesSwiper .swiper-slide-active {
+.veunesSwiper .swiper-slide-active{
   transform: scale(1.1);
+  margin-left: 20px;
+  margin-right: 45px!important;
   /* Increase size for center slide */
   opacity: 1;
   /* Full opacity */
