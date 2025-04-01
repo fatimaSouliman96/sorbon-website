@@ -1,35 +1,16 @@
 .clients .swiper {
   width: 100%;
-  max-width: 100%;
-  height: 170px;
+  padding: 50px;
 }
-.swiper-wrapper{
-  margin: 0 2rem 0 2rem;
-}
+
 .clients .swiper-slide {
   background-position: center;
   background-size: cover;
   width: 222px;
-  height: 146px;
-  border-radius: 4px;
-  position: relative;
+  height: 138px;
 }
 
 .clients .swiper-slide img {
   display: block;
   width: 100%;
-}
-
-.clients .swiper-button-next,
-.clients .swiper-button-prev {
-  color: #17133F !important;
-  margin-top: -2.5rem !important;
-}
-
-.clients .swiper-button-prev {
-  margin-left: -0.5rem !important;
-}
-
-.clients .swiper-button-next {
-  margin-right: -0.4rem !important;
 }

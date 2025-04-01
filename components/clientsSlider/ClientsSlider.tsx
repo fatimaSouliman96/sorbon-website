@@ -23,7 +23,7 @@ export default function ClientsSlider() {
                 navigation={true}
                 modules={[Navigation, Autoplay]}
                 loop={true}
-                initialSlide={(10/2)}
+                centeredSlides={true}
                 autoplay={{ delay: 6000, disableOnInteraction: false }}
                 className="mySwiper"
                 breakpoints={{
@@ -41,7 +41,7 @@ export default function ClientsSlider() {
                         },
                         913: { // For screens >= 1075px
                           slidesPerView: 5,
-                          spaceBetween: 10,
+                          spaceBetween: 50,
                         },
                       }}
             >

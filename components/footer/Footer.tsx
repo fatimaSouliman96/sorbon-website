@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
 
             <div className='flex flex-col lg:pt-4 pt-4 913max:pt-10' >
-                <span className='bg-[#ffffff65] block w-full h-[2px]'></span>
+                <span className='bg-[#6d6b8c] block w-full h-[2px]'></span>
 
                 <div className='flex items-center pt-4 justify-between' >
                     <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>© 2023 Sorbonne Academy. All rights reserved.</p>

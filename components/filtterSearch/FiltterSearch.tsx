@@ -9,7 +9,7 @@ import CustomDatepicker from '../date/Date';
 export default function FiltterSearch() {
 
     return (
-        <div className='sm:gap-4 gap-2 ustify-center w-[90%] mt-3 flex  flex-col items-center mx-auto bg-[#F0EFFA66] backdrop-blur-[20px] p-6 rounded-[10px] '>
+        <div className='sm:gap-4 gap-2 ustify-center w-[90%] flex  flex-col items-center mx-auto bg-[#F0EFFA66] backdrop-blur-[20px] p-6 rounded-[10px] '>
             <div className='relative w-full' >
                 <Image alt='search' width={24} height={24} src='/search-filtter.svg' className='cursor-pointer right-0 absolute bottom-1' />
                 <Image alt='search' width={24} height={24} src='/search.svg' className='left-0 absolute bottom-1' />
