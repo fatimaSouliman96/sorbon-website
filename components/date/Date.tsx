@@ -99,7 +99,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
 
           <div className="w-full h-[1px] bg-[#17133f57]"></div>
 
-          <div className="grid grid-cols-[24px_24px_24px_24px_24px_24px_24px] mt-2">
+          <div className="grid grid-cols-[31px_31px_31px_31px_31px_31px_31px] mt-2">
             {[...Array(daysInMonth)].map((_, index) => {
               const day = index + 1;
               return (
