@@ -62,7 +62,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
       />
 
       {isOpen && (
-        <div className="absolute z-50 left-0 mt-2 w-[250px] bg-white text-black rounded-lg shadow-lg p-2">
+        <div className="absolute z-50 left-0 mt-2 w-[240px] bg-white text-black rounded-lg shadow-lg p-2">
           <div className="flex items-center justify-between mb-2">
             <button
               onClick={() => {
@@ -99,7 +99,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
 
           <div className="w-full h-[1px] bg-[#17133f57]"></div>
 
-          <div className="grid grid-cols-[32px_32px_32px_32px_32px_32px_32px] mt-2">
+          <div className="grid grid-cols-[24px_24px_24px_24px_24px_24px_24px] mt-2">
             {[...Array(daysInMonth)].map((_, index) => {
               const day = index + 1;
               return (
@@ -110,7 +110,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
                     setSelectedDate(`${day} / ${currentMonth + 1} / ${currentYear}`);
                     setIsOpen(false);
                   }}
-                  className={`h-7 flex items-center justify-center rounded-md ${
+                  className={`h-6 flex items-center justify-center rounded-md ${
                     day === currentDay ? "bg-secondary text-white" : "hover:bg-gray-300"
                   }`}
                 >
