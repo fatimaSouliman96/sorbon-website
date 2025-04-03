@@ -63,7 +63,7 @@ export default function NavBar() {
 
             {/* Mobile Menu */}
             {open && (
-                <ul ref={menuRef} className="absolute top-[5.2rem] left-0 flex flex-col items-center bg-primary p-3 w-full gap-4 lg:hidden md:flex">
+                <ul ref={menuRef} className="absolute top-[7rem] left-0 flex flex-col items-center bg-primary p-3 w-full gap-4 lg:hidden md:flex">
                     {navLinks.map((ele) => {
                         const isActive = pathname === ele.link;
                         return (

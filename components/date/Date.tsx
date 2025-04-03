@@ -43,7 +43,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
   ];
 
   return (
-    <div className="relative z-30 " ref={calendarRef}>
+    <div className="relative z-50 overflow-visible " ref={calendarRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -110,7 +110,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
                     setSelectedDate(`${day} / ${currentMonth + 1} / ${currentYear}`);
                     setIsOpen(false);
                   }}
-                  className={`w-8 h-8 flex items-center justify-center rounded-full ${
+                  className={`w-7 h-7 flex items-center justify-center rounded-full ${
                     day === currentDay ? "bg-blue-500 text-white" : "hover:bg-gray-300"
                   }`}
                 >
