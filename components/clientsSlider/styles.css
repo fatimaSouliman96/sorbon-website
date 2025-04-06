@@ -7,10 +7,45 @@
   background-position: center;
   background-size: cover;
   width: 222px;
-  height: 138px;
+  height: 145px;
 }
 
 .clients .swiper-slide img {
   display: block;
   width: 100%;
+}
+.client-swiper .custom-swiper-button-prev,
+.client-swiper .custom-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  z-index: 20;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+
+.client-swiper .custom-swiper-button-prev {
+  left: 1%;
+}
+
+.client-swiper .custom-swiper-button-next {
+  right: 1%;
+}
+
+
+@media(max-width: 860px) {
+
+ .client-swiper .custom-swiper-button-prev,
+  .client-swiper .custom-swiper-button-next {
+    top: -15px!important;
+   
+  }
+  .client-swiper .custom-swiper-button-prev{
+    left: 80%;
+  }
+  .client-swiper .custom-swiper-button-next{
+    left: 90%;
+  }
+
+
 }

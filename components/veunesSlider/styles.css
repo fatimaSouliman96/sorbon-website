@@ -43,10 +43,10 @@
 }
 
 /* Make center slide larger and full opacity */
-.veunesSwiper .swiper-slide-active{
+.veunesSwiper .swiper-slide-active {
   transform: scale(1.1);
   margin-left: 20px;
-  margin-right: 45px!important;
+  margin-right: 45px !important;
   /* Increase size for center slide */
   opacity: 1;
   /* Full opacity */
@@ -102,77 +102,40 @@
   height: 18px !important;
 }
 
-.veunesSwiper .swiper-button-prev {
-  margin-left: 20rem !important;
-  margin-top: 8rem !important;
-  color: #17133F !important;
-  height: 10px;
+.veune-swiper .custom-swiper-button-prev,
+.veune-swiper .custom-swiper-button-next {
+  position: absolute;
+  top: 92%;
+  z-index: 20;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
-.veunesSwiper .swiper-button-next {
-  margin-right: 20rem !important;
-  margin-top: 8rem !important;
-  color: #17133F !important;
-  height: 10px;
+
+.veune-swiper .custom-swiper-button-prev {
+  left: 30%;
 }
 
-/* Medium screens (tablets) */
-@media (max-width: 1024px) {
-  .veunesSwiper .swiper-button-prev {
-    margin-left: 10rem !important;
-
-  }
-
-  .veunesSwiper .swiper-button-next {
-    margin-right: 10rem !important;
-
-  }
+.veune-swiper .custom-swiper-button-next {
+  right: 30%;
 }
 
-/* Small screens (mobile) */
-@media (max-width: 768px) {
 
-  .veunesSwiper .swiper-button-prev,
-  .veunesSwiper .swiper-button-next {
-    /* margin: 0 !important; */
-    transform: translateY(-50%);
-  }
+@media(max-width: 860px) {
 
-  .veunesSwiper .swiper-button-prev {
-    left: -150px !important;
+  .veune-swiper .custom-swiper-button-prev,
+  .veune-swiper .custom-swiper-button-next {
+    top: -15px!important;
+   
   }
-
-  .veunesSwiper .swiper-button-next {
-    right: -150px !important;
+  .veune-swiper .custom-swiper-button-prev{
+    left: 80%;
   }
-}
-@media (max-width: 448px) {
-  .veunesSwiper {
-    height: 300px!important;
+  .veune-swiper .custom-swiper-button-next{
+    left: 90%;
   }
-  .veunesSwiper .swiper-button-prev,
-  .veunesSwiper .swiper-button-next {
-    margin-top: 8rem !important;   
-  }
-  .veunesSwiper .swiper-button-prev {
-    left: -161px !important;
+  .veune-swiper .custom-swiper-button-next img{
+    max-width: none;
   }
 
-  .veunesSwiper .swiper-button-next {
-    right: -161px !important;
-  }
-
- 
-}
-@media (max-width: 428px) {
-  .veunesSwiper {
-    height: 350px!important;
-  }
-  .veunesSwiper .swiper-pagination-bullets{
-    top: 16rem!important;
-  }
-  .veunesSwiper .swiper-button-prev,
-  .veunesSwiper .swiper-button-next {
-    margin-top: 9rem !important;   
-  }
 }

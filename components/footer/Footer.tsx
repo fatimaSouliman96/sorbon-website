@@ -5,7 +5,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary pt-8 ">
-            <div className='px-16 grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[200px_150px_80px_auto] 1213min:gap-[12%] md:gap-[4%] 1213max:gap-[9%] 1100max:gap-[6.3%] 713max:gap-2 688max:gap-0 items-start '>
+            <div className='585max:px-6 px-16 grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[200px_150px_80px_auto] 1213min:gap-[12%] md:gap-[4%] 1213max:gap-[9%] 1100max:gap-[6.3%] 713max:gap-2 688max:gap-0 items-start '>
                 <div className=" relative flex flex-col gap-10">
                     <Image src="/logo-white.svg" width={150} height={200} alt="sorbon-logo" />
                     <div>
@@ -58,7 +58,7 @@ export default function Footer() {
             <div className='flex w-full flex-col lg:pt-4 pt-4 913max:pt-10' >
                 <span className='bg-[#6d6b8c] block w-full h-[2px]'></span>
 
-                <div className='px-16 flex items-center py-2 justify-between' >
+                <div className='585max:px-6 px-16 flex items-center py-2 justify-between' >
                     <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>© 2023 Sorbonne Academy. All rights reserved.</p>
                     <div className='flex items-center gap-4'>
                         <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>Terms and Conditions</p>

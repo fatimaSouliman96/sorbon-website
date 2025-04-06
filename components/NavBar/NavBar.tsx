@@ -35,7 +35,7 @@ export default function NavBar() {
 
 
     return (
-        <nav className={`bg-primary shadow-[0px_6px_10px_0px_rgba(23,19,63,0.25)] transition-all duration-200 max-w-full w-full fixed top-0 px-12 z-20 py-2 flex items-center justify-between`}>
+        <nav className={`bg-primary shadow-[0px_6px_10px_0px_rgba(23,19,63,0.25)] transition-all duration-200 max-w-full w-full fixed top-0 px-12 z-50 py-2 flex items-center justify-between`}>
             <div className="relative ">
                 <Image
                     src={"/logo-blue.svg"}
