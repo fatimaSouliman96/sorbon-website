@@ -10,7 +10,7 @@
   position: relative;
   display: flex;
   height: 184px;
-  width: 100%;
+  width: 450px;
   justify-content: center;
   align-items: center;
   transition: all 0.4s ease-in-out;
@@ -122,20 +122,34 @@
 
 
 @media(max-width: 860px) {
-
   .veune-swiper .custom-swiper-button-prev,
   .veune-swiper .custom-swiper-button-next {
     top: -15px!important;
-   
+    margin: auto;
   }
+
   .veune-swiper .custom-swiper-button-prev{
-    left: 80%;
+    left: 70%;
   }
+
   .veune-swiper .custom-swiper-button-next{
     left: 90%;
   }
+
   .veune-swiper .custom-swiper-button-next img{
     max-width: none;
   }
 
+
+
+}
+@media(max-width: 584px){
+  .veunesSwiper{
+    width: 80%!important;
+  }
+  .veunesSwiper .swiper-slide-active {
+    transform: none!important;
+    margin: 0!important;
+  }
+  
 }
