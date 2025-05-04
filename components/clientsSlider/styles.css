@@ -1,6 +1,7 @@
 .clients .swiper {
-  width: 100%;
+  width: 90%;
   padding: 50px;
+  margin: 0 auto;
 }
 
 .clients .swiper-slide {

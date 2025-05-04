@@ -45,3 +45,5 @@
   width: 15px;
 
 }
+
+@layer base {img { display: initial;}}

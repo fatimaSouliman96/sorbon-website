@@ -21,17 +21,15 @@ export default function Footer() {
                 <div>
                     <p className='721min:text-xl pb-2 text-lg font-medium text-white' >Navigation</p>
                     <ul className='flex flex-col gap-2 pt-2'>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Home</li>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Public Courses</li>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Online Courses</li>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>About</li>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Contact Us</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/"} >Home</Link></li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/about"} >About</Link></li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/contact"} >Contact Us</Link></li>
                     </ul>
                 </div>
                 <div>
                     <p className='721min:text-xl pb-2 text-lg font-medium text-white' >Resources</p>
                     <ul className='flex flex-col gap-2 pt-2'>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Blog</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/blogs"} >Blog</Link></li>
                         <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>News</li>
                         <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Site Map</li>
                     </ul>
@@ -61,8 +59,8 @@ export default function Footer() {
                 <div className='585max:px-6 px-16 flex items-center py-2 justify-between' >
                     <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>© 2023 Sorbonne Academy. All rights reserved.</p>
                     <div className='flex items-center gap-4'>
-                        <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>Terms and Conditions</p>
-                        <p className='721min:text-base text-base font-extralight text-[#ffffffab]'>Privacy Policy</p>
+                        <p className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/terms"} >Terms and Conditions</Link></p>
+                        <p className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/privacy"} >Privacy Policy</Link></p>
                     </div>
                 </div>
             </div>

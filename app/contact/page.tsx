@@ -2,6 +2,7 @@ import ContactForm from '@/components/contactForm/ContactForm'
 import ContactInfo from '@/components/contactInfo/ContactInfo'
 import HeroCategories from '@/components/heroCategories/HeroCategories'
 import React from 'react'
+import { Toaster } from 'react-hot-toast'
 
 export default function page() {
   return (
@@ -18,6 +19,11 @@ export default function page() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+      <Toaster
+        position="bottom-left"
+        
+        reverseOrder={false}
+      />
 
     </div>
   )

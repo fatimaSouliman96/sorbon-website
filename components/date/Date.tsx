@@ -2,17 +2,19 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
-interface dateProps {
+interface DateProps {
   form?: boolean;
+  value: string;
+  onChange: (value: string) => void;
 }
 
-const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
+const CustomDatePicker: React.FC<DateProps> = ({ form, value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  const [currentDay, setCurrentDay] = useState(new Date().getDate());
   const calendarRef = useRef<HTMLDivElement>(null);
+
+  const [currentDay, setCurrentDay] = useState<number | null>(null);
+  const [currentMonth, setCurrentMonth] = useState<number>(new Date().getMonth());
+  const [currentYear, setCurrentYear] = useState<number>(new Date().getFullYear());
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -31,10 +33,17 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
   }, [isOpen]);
 
   useEffect(() => {
-    setSelectedDate(`${currentDay} / ${currentMonth + 1} / ${currentYear}`);
-}, [currentDay, currentMonth, currentYear]);
+    if (currentDay === null) return;
+  
+    const newDate = `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-${String(currentDay).padStart(2, "0")}`;
+    if (newDate !== value) {
+      onChange(newDate);
+    }
+  }, [currentDay, currentMonth, currentYear, value, onChange]);
 
-  const getDaysInMonth = (month: number, year: number) => new Date(year, month + 1, 0).getDate();
+  const getDaysInMonth = (month: number, year: number) =>
+    new Date(year, month + 1, 0).getDate();
+
   const daysInMonth = getDaysInMonth(currentMonth, currentYear);
 
   const months = [
@@ -43,7 +52,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
   ];
 
   return (
-    <div className="relative z-50 overflow-visible " ref={calendarRef}>
+    <div className="relative z-50 overflow-visible" ref={calendarRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -54,9 +63,9 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
 
       <input
         type="text"
-        value={selectedDate || ""}
+        value={value ? value.split("-").reverse().join(" / ") : ""}
         readOnly
-        placeholder={form ? `${currentDay} / ${currentMonth + 1} / ${currentYear}` : "Date"}
+        placeholder="Select a date"
         className={`w-full placeholder:text-white border-b border-white bg-transparent outline-none ${form ? "p-1" : "p-2"} text-white cursor-pointer`}
         onClick={() => setIsOpen(!isOpen)}
       />
@@ -67,10 +76,10 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
             <button
               onClick={() => {
                 if (currentMonth === 0) {
-                  setCurrentYear(currentYear - 1);
+                  setCurrentYear((prev) => prev - 1);
                   setCurrentMonth(11);
                 } else {
-                  setCurrentMonth(currentMonth - 1);
+                  setCurrentMonth((prev) => prev - 1);
                 }
               }}
               className="px-2 py-1 hover:bg-gray-200 rounded"
@@ -85,10 +94,10 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
             <button
               onClick={() => {
                 if (currentMonth === 11) {
-                  setCurrentYear(currentYear + 1);
+                  setCurrentYear((prev) => prev + 1);
                   setCurrentMonth(0);
                 } else {
-                  setCurrentMonth(currentMonth + 1);
+                  setCurrentMonth((prev) => prev + 1);
                 }
               }}
               className="px-2 py-1 hover:bg-gray-200 rounded"
@@ -99,7 +108,7 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
 
           <div className="w-full h-[1px] bg-[#17133f57]"></div>
 
-          <div className="grid grid-cols-[31px_31px_31px_31px_31px_31px_31px] mt-2">
+          <div className="grid grid-cols-[repeat(7,31px)] mt-2">
             {[...Array(daysInMonth)].map((_, index) => {
               const day = index + 1;
               return (
@@ -107,7 +116,6 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
                   key={day}
                   onClick={() => {
                     setCurrentDay(day);
-                    setSelectedDate(`${day} / ${currentMonth + 1} / ${currentYear}`);
                     setIsOpen(false);
                   }}
                   className={`h-6 flex items-center justify-center rounded-md ${
@@ -126,6 +134,8 @@ const CustomDatePicker: React.FC<dateProps> = ({ form }) => {
 };
 
 export default CustomDatePicker;
+
+
 
 
 

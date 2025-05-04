@@ -8,6 +8,7 @@ import './styles.css';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import type { Swiper as SwiperClass } from 'swiper';
+import { clientsData } from '@/constant/staticData';
 
 export default function ClientsSlider() {
   const refNext = useRef<HTMLDivElement | null>(null);
@@ -31,6 +32,8 @@ export default function ClientsSlider() {
     }
 
   }, [swiperInstance]);
+
+
 
   return (
     <div className="relative client-swiper">
@@ -64,8 +67,10 @@ export default function ClientsSlider() {
         grabCursor
         loop
         centeredSlides
+        initialSlide={Math.floor(clientsData.length / 2)}
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         modules={[Navigation, Autoplay]}
+        
         onSwiper={(swiper) => setSwiperInstance(swiper)}
         className="mySwiper"
         breakpoints={{
@@ -75,13 +80,14 @@ export default function ClientsSlider() {
           913: { slidesPerView: 5, spaceBetween: 50 },
         }}
       >
-        {[...Array(10)].map((_, i) => (
-          <SwiperSlide key={i}>
+        {clientsData.map((ele, index) => (
+          <SwiperSlide key={index}>
             <div className="relative w-full h-[150px]">
               <Image
                 className="rounded"
-                src="/clients.png"
-                fill
+                src={ele.img}
+                height={150}
+                width={222}
                 alt="sorbon-logo"
                 style={{ objectFit: 'contain' }}
               />

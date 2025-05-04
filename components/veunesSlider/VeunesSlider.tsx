@@ -9,11 +9,34 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./styles.css";
 import type { Swiper as SwiperClass } from 'swiper';
+import { citiesType } from "@/types/types";
 
-export default function VeunesSlider() {
+interface data {
+  cities: citiesType[] | undefined
+}
+
+
+const VeunesSlider: React.FC<data> = ({ cities }) => {
   const desktopPrev = useRef<HTMLDivElement | null>(null);
   const desktopNext = useRef<HTMLDivElement | null>(null);
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(null);
+  const getBreakpoints = (length: number | undefined) => {
+    const base = {
+      0: { slidesPerView: 1, spaceBetween: 60 },
+      585: { slidesPerView: 2, spaceBetween: 20 },
+      721: { slidesPerView: 3, spaceBetween: 30 },
+    };
+  
+    if (length && length > 5) {
+      return {
+        ...base,
+        913: { slidesPerView: 4, spaceBetween: 25 },
+      };
+    }
+  
+    return base;
+  };
+  
 
   useEffect(() => {
     if (
@@ -68,26 +91,21 @@ export default function VeunesSlider() {
         centeredSlides={true}
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         modules={[Navigation, Pagination, Autoplay]}
-        breakpoints={{
-          0: { slidesPerView: 1, spaceBetween: 60 },
-          585: { slidesPerView: 2, spaceBetween: 20 },
-          721: { slidesPerView: 3, spaceBetween: 20 },
-          913: { slidesPerView: 4, spaceBetween: 25 },
-        }}
+        breakpoints={getBreakpoints(cities?.length)}
         onSwiper={(swiper) => setSwiperInstance(swiper)}
         className="veunesSwiper"
       >
-        {[...Array(11)].map((_, index) => (
-          <SwiperSlide key={index} className="swiper-slide-custom h-[278px] w-full  relative">
+        {cities?.map((ele) => (
+          <SwiperSlide key={ele.id} className="swiper-slide-custom h-[278px] w-full  relative">
             <Image
               className="rounded-xl"
-              src="/veunes.png"
+              src={"/veunes.png"}
               alt="venue"
               fill
             />
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-xl bg-[#17133f99] z-10">
               <h1 className="text-4xl text-white font-bold text-center">
-                City
+                {ele.title}
               </h1>
             </div>
           </SwiperSlide>
@@ -97,7 +115,4 @@ export default function VeunesSlider() {
   );
 }
 
-
-
-
-
+export default VeunesSlider 
