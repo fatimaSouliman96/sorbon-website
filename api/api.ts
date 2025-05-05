@@ -6,7 +6,8 @@ import axios from 'axios';
 const axiosInstance = axios.create({
   baseURL: baseUrl,
   headers: {
-    "Accept": "application/json"
+    "Accept": "application/json",
+    'Content-Type': 'application/json',
   }
 });
 

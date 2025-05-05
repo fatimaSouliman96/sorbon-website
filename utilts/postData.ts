@@ -12,17 +12,10 @@ export default async function postData<T, D = any>(url: string, data?: D) {
       console.error("Error: Unknown response structure");
     }
   } catch (error: any) {
-    console.error("Post error:", error.code || error.message);
-
-    // Retry once if ECONNRESET
-    if (error.code === "ECONNRESET") {
-      try {
-        console.log("Retrying post...");
-        const response: TAPIResponce<T> = await axiosInstance.post(url, data);
-        if (isSuccessResponse(response)) return response.data;
-      } catch (retryError) {
-        console.error("Retry failed:", retryError);
-      }
+    if (error.response) {
+      console.error("Post error:", error.response.status, error.response.data);
+    } else {
+      console.error("Post error:", error.code || error.message);
     }
   }
 }
