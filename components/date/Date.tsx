@@ -71,7 +71,7 @@ const CustomDatePicker: React.FC<DateProps> = ({ form, value, onChange }) => {
       />
 
       {isOpen && (
-        <div className="absolute z-50 left-0 mt-2 w-[240px] bg-white text-black rounded-lg shadow-lg p-2">
+        <div className="absolute z-50 left-0 mt-1 w-[240px] bg-white text-black rounded-lg shadow-lg p-1">
           <div className="flex items-center justify-between mb-2">
             <button
               onClick={() => {

@@ -35,7 +35,8 @@ export default function ShowResults() {
     keyword: "",
     durationText: "",
     categoryText: "",
-    cityText: ""
+    cityText: "",
+    date: ""
   })
 
   const fetchCourses = async () => {
@@ -47,7 +48,7 @@ export default function ShowResults() {
     try {
       const data = await postData<SearchResponse[]>(`search`, {
         keyword: searchParamsValues.keyword,
-        date: searchParamsValues.date,
+        date_form: searchParamsValues.date,
         duration: searchParamsValues.duration,
         category: searchParamsValues.category,
         city: searchParamsValues.city,
@@ -61,6 +62,7 @@ export default function ShowResults() {
         durationText: searchParamsValues.durationText || "",
         categoryText: searchParamsValues.categoryText || "",
         cityText: searchParamsValues.cityText || "",
+        date: searchParamsValues.date || ""
       });
     }
   }, [searchParamsValues]);
@@ -71,6 +73,7 @@ export default function ShowResults() {
       durationText: searchParamsValues.durationText || "",
       categoryText: searchParamsValues.categoryText || "",
       cityText: searchParamsValues.cityText || "",
+      date: searchParamsValues.date || "",
     });
 
     if (

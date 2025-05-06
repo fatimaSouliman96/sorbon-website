@@ -22,12 +22,14 @@ interface FiltterSearchProps {
     keyword,
     durationText,
     categoryText,
-    cityText
+    cityText,
+    date
   }: {
     keyword: string;
     durationText: string;
     categoryText: string;
     cityText: string;
+    date: string
   }) => void;
   setNewResults?: (results: SearchResponse[]) => void
 }
@@ -109,6 +111,7 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log(formData)
     e.preventDefault();
     if (allFieldsEmpty()) {
       toast.error("Please fill at least one field before searching.");
@@ -124,7 +127,7 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
         try {
           const data = await postData<SearchResponse[]>(`search`, {
             keyword: formData.keyword,
-            date: formData.date,
+            date_form: formData.date,
             duration: formData.duration,
             category: formData.category,
             city: formData.city
@@ -135,7 +138,8 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
             keyword: formData.keyword,
             durationText: formData.durationText || "",
             categoryText: formData.categoryText || "",
-            cityText: formData.cityText || ""
+            cityText: formData.cityText || "",
+            date: formData.date || ""
           });
 
         } catch (error) {
@@ -145,6 +149,7 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
         }
         const queryData: Record<string, string> = {
           keyword: formData.keyword || "",
+          date: formData.date || "",
           duration: formData.duration?.toString() || "",
           durationText: formData.durationText || "",
           category: formData.category?.toString() || "",

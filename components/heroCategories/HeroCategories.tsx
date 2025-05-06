@@ -13,12 +13,14 @@ interface HeroProps {
             keyword, 
             durationText, 
             categoryText, 
-            cityText 
+            cityText,
+            date 
           }: { 
             keyword: string; 
             durationText: string; 
             categoryText: string; 
             cityText: string; 
+            date: string
           }) => void;
            setNewResults?: (results: SearchResponse[]) => void
 }
