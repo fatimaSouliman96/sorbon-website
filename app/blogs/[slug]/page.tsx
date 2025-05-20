@@ -7,9 +7,18 @@ import React from 'react'
 
 
 
-export default async function page({params}: {params: Promise<{ slug: string }>}) {
+export default async function page({ params }: { params: Promise<{ slug: string }> }) {
 
     const data = await getData<BlogPost>(`get-blog/${(await params).slug}`);
+
+    if (!Array.isArray(data)) {
+        console.error("Expected array for blog posts but got:", data);
+        return (
+            <div className="w-full text-center py-8 font-bold text-red-600">
+                Failed to load blog data
+            </div>
+        );
+    }
     const formatDate = (dateStr?: string) => {
         if (!dateStr) return '';
         const date = new Date(dateStr);

@@ -13,7 +13,15 @@ import { Toaster } from 'react-hot-toast'
 export default async function Page({params}: {params: Promise<{ slug: string }>}) {
 
   const data = await getData<CourseDetailsResponse>(`get-timings-by-course/${(await params).slug}`);
-
+  
+  if (!Array.isArray(data)) {
+    console.error("Expected array for blog posts but got:", data);
+    return (
+      <div className="w-full text-center py-8 font-bold text-red-600">
+        Failed to load blog data
+      </div>
+    );
+  }
   // const faqData: FAQItem[] = [
   //   {
   //     question: "Course Objectives:",

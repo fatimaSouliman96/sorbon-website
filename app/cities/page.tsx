@@ -10,7 +10,15 @@ export default async function Page() {
   
   const data = await getData<citiesType[]>("get-all-cities");
   const cities = data || [];
-
+  
+  if (!Array.isArray(cities)) {
+    console.error("Expected array for blog posts but got:", cities);
+    return (
+      <div className="w-full text-center py-8 font-bold text-red-600">
+        Failed to load blog data
+      </div>
+    );
+  }
   const visibleItems = cities.slice(0, 9);
   const shouldShowToggle = cities.length > 9;
 

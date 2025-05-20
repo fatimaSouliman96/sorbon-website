@@ -7,7 +7,6 @@ import React from 'react';
 export default async function Page() {
   const data = await getData<BlogPost[]>(`get-blogs`);
 
-  // تحقق إنو البيانات مصفوفة
   if (!Array.isArray(data)) {
     console.error("Expected array for blog posts but got:", data);
     return (

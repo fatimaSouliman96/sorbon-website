@@ -6,6 +6,14 @@ import Link from "next/link";
 export default async function Page() {
   const data = await getData<CategoriesData[]>("get-all-categories?lang=en");
   const items = data || [];
+  if (!Array.isArray(items)) {
+    console.error("Expected array for blog posts but got:", items);
+    return (
+      <div className="w-full text-center py-8 font-bold text-red-600">
+        Failed to load blog data
+      </div>
+    );
+  }
 
   const visibleItems = items.slice(0, 9);
   const shouldShowToggle = items.length > 9;
@@ -34,7 +42,7 @@ export default async function Page() {
 
         {shouldShowToggle && (
           <Link
-            href="/categories/all" 
+            href="/categories/all"
             className="transform transition-transform duration-200 border-2 p-2 w-[200px] m-auto mt-8 border-[#322A8D99] rounded-[8px] text-[#322a8d] text-lg font-medium text-center"
           >
             All Categories
