@@ -2,20 +2,17 @@
   width: 100%;
   max-width: 100%;
   height: 310px;
-  padding-bottom: 1rem;
-  padding-top: 40px;
+  padding: 40px 60px 1rem; /* padding للتوازن بدل margin */
 }
 
 .veunesSwiper .swiper-slide {
   position: relative;
   display: flex;
-  height: 190px;
-  width: 450px;
   justify-content: center;
   align-items: center;
+  height: 190px;
+  width: 450px;
   transition: all 0.4s ease-in-out;
-  /* Make non-center slides smaller */
-  position: relative;
 }
 
 .veunesSwiper .swiper-slide::before {
@@ -27,68 +24,26 @@
   left: 0;
   background-color: rgba(255, 255, 255, 0.493);
   border-radius: 8px;
-
 }
 
 .veunesSwiper .swiper-slide-active::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 184px;
-  top: 0;
-  left: 0;
   background-color: transparent;
-  border-radius: 8px;
-
 }
-
-/* Make center slide larger and full opacity */
-.veunesSwiper .swiper-slide-active {
-  transform: scale(1.1);
-  margin-left: 20px;
-  margin-right: 45px !important;
-  /* Increase size for center slide */
-  opacity: 1;
-  /* Full opacity */
-  z-index: 2;
-  /* Bring to front */
-}
-
-.veunesSwiper .swiper-pagination-bullet {
-  border: 3.6px solid #17133F !important;
-  background-color: transparent !important;
-  width: 18px !important;
-  height: 18px !important;
-}
-
-.veunesSwiper .swiper-pagination-bullet-active {
-  background-color: #17133F !important;
-  width: 18px !important;
-  height: 18px !important;
-}
-
 
 .veunesSwiper .swiper-slide img {
   width: 100%;
   height: 184px;
   border-radius: 8px;
-  /* Default rounded corners */
   transition: border-radius 0.4s ease-in-out;
 }
 
-/* Increase rounding for the center slide */
-.veunesSwiper .swiper-slide-active img {
-  border-radius: 8px;
-}
-
-/* Scale effect: Center slide larger */
+/* تأثير السلايد النشط */
 .veunesSwiper .swiper-slide-active {
-  transform: scale(1.2);
-  /* Make center slide bigger */
+  transform: scale(1.1); /* أقل من 1.2 لتقليل مشاكل التمركز */
   z-index: 2;
-  /* Bring to front */
 }
 
+/* النقاط */
 .veunesSwiper .swiper-pagination-bullet {
   border: 3.6px solid #17133F !important;
   background-color: transparent !important;
@@ -98,10 +53,9 @@
 
 .veunesSwiper .swiper-pagination-bullet-active {
   background-color: #17133F !important;
-  width: 18px !important;
-  height: 18px !important;
 }
 
+/* أزرار التنقل */
 .veune-swiper .custom-swiper-button-prev,
 .veune-swiper .custom-swiper-button-next {
   position: absolute;
@@ -111,7 +65,6 @@
   cursor: pointer;
 }
 
-
 .veune-swiper .custom-swiper-button-prev {
   left: 30%;
 }
@@ -120,36 +73,33 @@
   right: 30%;
 }
 
-
+/* موبايل */
 @media(max-width: 860px) {
   .veune-swiper .custom-swiper-button-prev,
   .veune-swiper .custom-swiper-button-next {
-    top: -15px!important;
-    margin: auto;
+    top: -15px !important;
   }
 
-  .veune-swiper .custom-swiper-button-prev{
+  .veune-swiper .custom-swiper-button-prev {
     left: 70%;
   }
 
-  .veune-swiper .custom-swiper-button-next{
+  .veune-swiper .custom-swiper-button-next {
     left: 90%;
   }
 
-  .veune-swiper .custom-swiper-button-next img{
+  .veune-swiper .custom-swiper-button-next img {
     max-width: none;
   }
-
-
-
 }
-@media(max-width: 584px){
-  .veunesSwiper{
-    width: 80%!important;
+
+@media(max-width: 584px) {
+  .veunesSwiper {
+    width: 80% !important;
+    padding: 20px 10px !important;
   }
+
   .veunesSwiper .swiper-slide-active {
-    transform: none!important;
-    margin: 0!important;
+    transform: none !important;
   }
-  
 }

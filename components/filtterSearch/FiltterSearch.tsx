@@ -125,14 +125,16 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
       } else {
         setIsLoading(true);
         try {
-          const data = await postData<SearchResponse[]>(`search`, {
-            keyword: formData.keyword,
-            date_form: formData.date,
-            duration: formData.duration,
-            category: formData.category,
-            city: formData.city
-          });
-          
+          const requestData: Record<string, string | number> = {};
+
+          if (formData.keyword.trim() !== "") requestData.keyword = formData.keyword.trim();
+          if (formData.date.trim() !== "") requestData.date_form = formData.date.trim();
+          if (formData.duration !== null) requestData.duration = formData.duration;
+          if (formData.category !== null) requestData.category = formData.category;
+          if (formData.city !== null) requestData.city = formData.city;
+
+
+          const data = await postData<SearchResponse[]>(`search`, requestData);
           setNewResults?.(data ?? [])
           setSearchData?.({
             keyword: formData.keyword,
@@ -270,6 +272,7 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
               )}
             </button>
             <button
+              type="button"
               onClick={handleClear}
               className="bg-transparent transform transition-transform duration-200 text-white border border-white rounded w-1/2 h-[40px]"
             >

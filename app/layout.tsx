@@ -41,6 +41,7 @@ export default function RootLayout({
           src="/nutrient-viewer/nutrient-viewer.js"
           strategy="beforeInteractive"
         />
+        <meta name="robots" content="noindex,nofollow"/>
       </head>
       <body
         className={`${workSans.className} bg-[#f0effa] min-h-screen max-w-full grid grid-rows-[60px auto 80px] grid-cols-1  m-auto`}

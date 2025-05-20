@@ -82,14 +82,13 @@ export default function ClientsSlider() {
       >
         {clientsData.map((ele, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[150px]">
+            <div  className="relative w-full h-[150px]">
               <Image
                 className="rounded"
                 src={ele.img}
-                height={150}
-                width={222}
+                fill
                 alt="sorbon-logo"
-                style={{ objectFit: 'contain' }}
+               style={{ objectFit: 'fill' }}
               />
             </div>
           </SwiperSlide>

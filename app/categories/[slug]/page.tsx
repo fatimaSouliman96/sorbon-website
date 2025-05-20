@@ -39,7 +39,7 @@ export default async function page({params}: {params: Promise<{ slug: string }>}
           <div className=' grid-cols-1 1249max&600min:grid-cols-2 1250min:grid-cols-3 grid gap-4 w-full pt-8'>
             {
               dataCourses?.map((ele) => {
-                return <CourseCard cite={ele.city_title} date={ele.date_from} image={ele.course_image} title={ele.course_title} key={ele.id} link={`/course/${ele.course_slug}`}  />
+                return <CourseCard alt={ele.image_alt} cite={ele.city_title} date={ele.date_from} image={ele.course_image} title={ele.course_title} key={ele.id} link={`/course/${ele.course_slug}`}  />
               })
             }
           </div>

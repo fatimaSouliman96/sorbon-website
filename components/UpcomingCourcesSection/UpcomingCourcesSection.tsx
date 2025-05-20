@@ -13,7 +13,7 @@ export default async function UpcomingCourcesSection() {
     <div className='585max:grid-cols-1 grid-cols-2 grid gap-4 w-full pt-4'>
       {
         data?.map((ele, index) => {
-          return <CourseCard cite={ele.city_title} date={ele.date_from} image={ele.course_image} title={ele.course_title} key={ele.id} link={`/course/${ele.course_slug}`} index={index} length={data.length} />
+          return <CourseCard alt={ele.image_alt} cite={ele.city_title} date={ele.date_from} image={ele.course_image} title={ele.course_title} key={ele.id} link={`/course/${ele.course_slug}`} index={index} length={data.length} />
         })
       }
        

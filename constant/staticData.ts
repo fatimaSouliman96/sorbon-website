@@ -77,19 +77,23 @@ export const clientsData = [
 export const exploreCourses = [
     {
         title: "public training courses",
-        descraption: "Open to individuals and organizations to gain a new perspective on professional development and shared challenges."
+        descraption: "Open to individuals and organizations to gain a new perspective on professional development and shared challenges.",
+        image: "/public-training.png"
     },
     {
         title: "Tailored Training Courses",
-        descraption: "Customize corporate trainings to cater your immediate business needs."
+        descraption: "Customize corporate trainings to cater your immediate business needs.",
+        image: "/tailored-icon.png"
     },
     {
         title: "In-House Training Courses",
-        descraption: "Bringing extensive global expertise inside your business."
+        descraption: "Bringing extensive global expertise inside your business.",
+        image: "/inhouse-icon.png"
     },
     {
         title: "Online Training Courses",
-        descraption: "Internationally Recognized and accredited training courses via virtual class rooms."
+        descraption: "Internationally Recognized and accredited training courses via virtual class rooms.",
+        image: "/onlline-training.png"
     },
 ]
 

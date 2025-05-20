@@ -13,7 +13,7 @@ export default async function Explore() {
         <div className='bg-secondary px-12 mt-4 721max:grid-cols-2  433max:grid-cols-1  grid-cols-1 721min:grid-cols-4 grid gap-2 w-full pt-12 pb-12'>
            {
             exploreCourses.map((ele, index) => {
-              return <ExploreCard title={ele.title} descraption={ele.descraption} key={index} />
+              return <ExploreCard image={ele.image} title={ele.title} descraption={ele.descraption} key={index} />
             })
            }
             

@@ -46,13 +46,18 @@ export default function ShowResults() {
 
   const fetchResult = useCallback(async () => {
     try {
-      const data = await postData<SearchResponse[]>(`search`, {
-        keyword: searchParamsValues.keyword,
-        date_form: searchParamsValues.date,
-        duration: searchParamsValues.duration,
-        category: searchParamsValues.category,
-        city: searchParamsValues.city,
-      });
+      const requestData: Record<string, string | number> = {};
+
+      if (searchParamsValues.keyword?.trim()) requestData.keyword = searchParamsValues.keyword.trim();
+      if (searchParamsValues.date?.trim()) requestData.date_form = searchParamsValues.date.trim();
+      if (searchParamsValues.duration !== null && searchParamsValues.duration !== undefined)
+        requestData.duration = searchParamsValues.duration;
+      if (searchParamsValues.category !== null && searchParamsValues.category !== undefined)
+        requestData.category = searchParamsValues.category;
+      if (searchParamsValues.city !== null && searchParamsValues.city !== undefined)
+        requestData.city = searchParamsValues.city;
+
+      const data = await postData<SearchResponse[]>(`search`, requestData);
       setResults(data ?? []);
     } catch (error) {
       console.error("Error fetching search results:", error);

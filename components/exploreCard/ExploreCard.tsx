@@ -3,14 +3,15 @@ import React from 'react'
 
 interface ExploreCardProps {
     title: string,
-    descraption: string
+    descraption: string,
+    image: string
 }
-const ExploreCard: React.FC<ExploreCardProps> = ({title, descraption}) => {
+const ExploreCard: React.FC<ExploreCardProps> = ({title, descraption, image}) => {
     return (
         <div className='flex flex-col items-center gap-4' >
             <div className='w-[100px] h-[100px] p-4  rounded-lg bg-[#bab8c2] flex items-center justify-center'>
                 <div className='w-[50px] h-[50px] relative '>
-                    <Image src="/exploer.svg" fill alt="explore" />
+                    <Image src={image} fill alt="explore" />
                 </div>
             </div>
             <h1 className='text-white text-sm font-semibold uppercase' >{title}</h1>

@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
+
+
 const nextConfig: NextConfig = {
-  /* config options here */
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.externals = config.externals || [];
@@ -9,7 +10,6 @@ const nextConfig: NextConfig = {
         "@nutrient-sdk/viewer": "@nutrient-sdk/viewer",
       });
     }
-
     return config;
   },
   experimental: {
@@ -19,6 +19,16 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  images: {
+    remotePatterns: [
+      {
+         protocol: 'http',
+        hostname: 'api-euro.bscenter.org',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
+

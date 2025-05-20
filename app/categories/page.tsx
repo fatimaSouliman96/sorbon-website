@@ -24,7 +24,7 @@ export default async function Page() {
               image={ele.image}
               imageAlt={ele.image_alt}
               key={ele.id}
-              link={`categories/category/${ele.slug}`}
+              link={`categories/${ele.slug}`}
               category={true}
               title={ele.title}
               height="h-[184px]"

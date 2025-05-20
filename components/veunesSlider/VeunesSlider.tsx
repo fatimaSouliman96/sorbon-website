@@ -20,19 +20,13 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
   const desktopPrev = useRef<HTMLDivElement | null>(null);
   const desktopNext = useRef<HTMLDivElement | null>(null);
   const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(null);
-  const getBreakpoints = (length: number | undefined) => {
+  const getBreakpoints = () => {
     const base = {
       0: { slidesPerView: 1, spaceBetween: 60 },
       585: { slidesPerView: 2, spaceBetween: 20 },
-      721: { slidesPerView: 3, spaceBetween: 30 },
+      721: { slidesPerView: 4, spaceBetween: 30 },
     };
-  
-    if (length && length > 5) {
-      return {
-        ...base,
-        913: { slidesPerView: 4, spaceBetween: 25 },
-      };
-    }
+
   
     return base;
   };
@@ -87,11 +81,12 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
       <Swiper
         grabCursor={true}
         pagination={{ clickable: true }}
-        loop={true}
+        loop={cities && cities.length > 5}
         centeredSlides={true}
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         modules={[Navigation, Pagination, Autoplay]}
-        breakpoints={getBreakpoints(cities?.length)}
+        breakpoints={getBreakpoints()}
+         initialSlide={cities && cities.length > 0 ? Math.floor(cities.length / 2) : 0}
         onSwiper={(swiper) => setSwiperInstance(swiper)}
         className="veunesSwiper"
       >
@@ -99,7 +94,7 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
           <SwiperSlide key={ele.id} className="swiper-slide-custom h-[278px] w-full  relative">
             <Image
               className="rounded-xl"
-              src={"/veunes.png"}
+              src={ele.image??"/veunes.png"}
               alt="venue"
               fill
             />
