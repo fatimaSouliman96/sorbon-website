@@ -7,13 +7,7 @@ import CategoriesSection from "@/components/CategoriesSection/CategoriesSection"
 import UpcomingCourcesSection from "@/components/UpcomingCourcesSection/UpcomingCourcesSection";
 
 export default async function Home() {
-
-  
-  
-
-
   return (
-
     <>
       <HeroCategories background="bg-hero-home-bg" />
       <CategoriesSection />
