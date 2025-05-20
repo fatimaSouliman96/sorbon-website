@@ -30,7 +30,7 @@ export default function ShowResults() {
   }, [searchParams]);
 
   const [results, setResults] = useState<SearchResponse[]>([])
-  const [dataCourses, setDataCourses] = useState<SessionCource[]>()
+  const [dataCourses, setDataCourses] = useState<SessionCource[] | null>()
   const [searchData, setSearchData] = useState({
     keyword: "",
     durationText: "",
@@ -40,8 +40,9 @@ export default function ShowResults() {
   })
 
   const fetchCourses = async () => {
-    const courses = await getData<SessionCource[]>("get-upcoming-courses?lang=en");
-    setDataCourses(courses);
+    const data = await getData<SessionCource[]>("get-upcoming-courses?lang=en");
+ 
+    setDataCourses(data);
   };
 
   const fetchResult = useCallback(async () => {
@@ -123,6 +124,7 @@ export default function ShowResults() {
           {
             dataCourses?.map((ele) => (
               <CourseCard
+                alt={ele.image_alt}
                 cite={ele.city_title}
                 date={ele.date_from}
                 image={ele.course_image}

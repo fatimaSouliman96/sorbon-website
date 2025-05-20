@@ -10,7 +10,7 @@ interface CardCity {
   image: string | null,
   imageAlt: string
 }
-const CardCity: React.FC<CardCity> = ({ title, height, category, link,  imageAlt, image }) => {
+const CardCity: React.FC<CardCity> = ({ title, height, link,  imageAlt, image }) => {
 
   return (
     <Link href={link} className={`flex justify-center items-center transform transition-transform duration-200 scal relative rounded shadow-custom-md  ${height} p-2  `}  >

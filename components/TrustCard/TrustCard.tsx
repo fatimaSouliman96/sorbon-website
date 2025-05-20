@@ -12,28 +12,29 @@ interface TrustCardProps {
 const TrustCard: React.FC<TrustCardProps> = ({ index, length, title, num }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [startCount, setStartCount] = useState(false);
+useEffect(() => {
+  const node = ref.current;
+  if (!node) return;
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStartCount(true);
-          observer.disconnect(); // لمراقبة العنصر مرة واحدة فقط
-        }
-      },
-      {
-        threshold: 0.6,
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setStartCount(true);
+        observer.disconnect(); // لمراقبة العنصر مرة واحدة فقط
       }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
+    },
+    {
+      threshold: 0.6,
     }
+  );
 
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
+  observer.observe(node);
+
+  return () => {
+    observer.unobserve(node); // ✅ استخدمي المتغير المحلي بدل ref.current
+  };
+}, []);
+
 
   return (
     <div className='flex flex-col items-center justify-center' ref={ref}>
