@@ -27,10 +27,10 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
       721: { slidesPerView: 4, spaceBetween: 30 },
     };
 
-  
+
     return base;
   };
-  
+
 
   useEffect(() => {
     if (
@@ -86,15 +86,16 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         modules={[Navigation, Pagination, Autoplay]}
         breakpoints={getBreakpoints()}
-         initialSlide={cities && cities.length > 0 ? Math.floor(cities.length / 2) : 0}
+        initialSlide={cities && cities.length > 0 ? Math.floor(cities.length / 2) : 0}
         onSwiper={(swiper) => setSwiperInstance(swiper)}
         className="veunesSwiper"
       >
         {cities?.map((ele) => (
           <SwiperSlide key={ele.id} className="swiper-slide-custom h-[278px] w-full  relative">
             <Image
+              unoptimized
               className="rounded-xl"
-              src={ele.image??"/veunes.png"}
+              src={ele.image ?? "/veunes.png"}
               alt="venue"
               fill
             />

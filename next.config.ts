@@ -22,8 +22,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-         protocol: 'http',
-        hostname: 'api-euro.bscenter.org',
+         protocol: 'https',
+        hostname: 'api.bscenter.org',
         pathname: '/**',
       },
     ],

@@ -4,7 +4,7 @@ import { TAPIResponce } from '@/types/types';
 
 export default async function getData<T>(url: string): Promise<T | null> {
   try {
-    const response: TAPIResponce<T> = await axiosInstance.get(url);
+    const response: TAPIResponce<T> = await axiosInstance.get(url, { timeout: 15000 });
     if (isSuccessResponse(response)) {
       return response.data;
     } else {
@@ -24,6 +24,6 @@ export default async function getData<T>(url: string): Promise<T | null> {
         console.error("Retry failed:", retryError);
       }
     }
-    return null; // <= هذا هو المهم
+    return null;
   }
 }

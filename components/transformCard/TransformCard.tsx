@@ -19,9 +19,9 @@ const TransformCard: React.FC<TransformCardProps> = ({ index, length = 0, title,
             <div className=" w-full h-full  absolute top-0 right-0 z-[-1]">
                 <div className='w-full h-full relative' >
                     <Image
+                         unoptimized
                         className={`585max:rounded w-full h-full ${index == 0 ? "rounded-tl-[30px] rounded-b rounded-tr" : index == 1 ? "rounded-tr-[30px] rounded-b rounded-tl" : !isOdd(length) && index == length - 2 ? "rounded-bl-[30px] rounded-br rounded-t  " : !isOdd(length) && index == length - 1 ? "rounded-br-[30px] rounded-bl rounded-t" : isOdd(length) && index == length - 1 ? "rounded-bl-[30px] rounded-br rounded-t" : " rounded"}`}
                         fill
-                        unoptimized
                         src={image || "/transform.jpg"}
                         alt={image_alt} />
                 </div>
