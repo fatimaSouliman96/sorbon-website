@@ -14,11 +14,10 @@ export default async function Page({params}: {params: Promise<{ slug: string }>}
 
   const data = await getData<CourseDetailsResponse>(`get-timings-by-course/${(await params).slug}`);
   
-  if (!Array.isArray(data)) {
-    console.error("Expected array for blog posts but got:", data);
+  if (!data) {
     return (
-      <div className="w-full text-center py-8 font-bold text-red-600">
-        Failed to load blog data
+      <div className="w-full h-screen pt-80 text-center py-8 font-bold text-red-600">
+        There are no available timings for this course.
       </div>
     );
   }
@@ -67,16 +66,16 @@ export default async function Page({params}: {params: Promise<{ slug: string }>}
             <h1 className='lg:text-xl text-lg  font-semibold text-secondary uppercase '>{data?.course.h1}</h1>
             <p className='text-sm font-normal pt-2 text-secondary'>{data?.course.title}</p>
           </div>
-          <div className='relative lg:w-[35%] w-full md:w-[35%]' >
+          {/* <div className='relative lg:w-[35%] w-full md:w-[35%]' >
             <Image alt='search' width={24} height={24} src='/search-blue.svg' className='left-0 absolute bottom-1' />
             <input type='search' placeholder='Search For keywords' className='text-sm font-normal w-full text-secondary pl-8 outline-none border-b-[1px] border-secondary bg-transparent' />
-          </div>
+          </div> */}
 
         </div>
         {data?.timings == undefined ?
           <h1 className='flex items-center  p-2 text-sm font-medium text-secondary '>
             There are no available timings for this course.
-          </h1> : <Table coursePage={true} columns={courseCoulmns} content={<CourceTableContent course={data?.course} id={data?.course.id} row={data?.timings} />} />}
+          </h1> : <Table  columns={courseCoulmns} content={<CourceTableContent course={data?.course} id={data?.course.id} row={data?.timings} />} />}
         {/* <FAQ fag={faqData} /> */}
       </div>
       <Toaster

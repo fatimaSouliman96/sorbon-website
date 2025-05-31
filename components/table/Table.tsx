@@ -5,10 +5,9 @@ import React, { ReactElement } from 'react'
 interface TableProps {
     columns: string[],
     content: ReactElement,
-    coursePage?: boolean,
     
 }
-const Table: React.FC<TableProps> = ({ columns, content, coursePage }) => {
+const Table: React.FC<TableProps> = ({ columns, content }) => {
     return (
         <>
           
@@ -26,11 +25,7 @@ const Table: React.FC<TableProps> = ({ columns, content, coursePage }) => {
                             </thead>
                             {content}
                         </table>
-                        {coursePage && <div className="border max-w-full border-t-0 p-4 bg-white flex items-center justify-center  border-[#cbd5e1]">
-                            <button className='border-1 border p-2 w-[200px] border-[#322A8D99] rounded-[8px] text-[#322A8D99] text-lg font-medium ' >
-                                All Cities
-                            </button>
-                        </div>}
+
                     </div>
             
         </>

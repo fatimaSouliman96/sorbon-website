@@ -7,10 +7,10 @@ import React from 'react';
 export default async function Page() {
   const data = await getData<BlogPost[]>(`get-blogs`);
 
-  if (!Array.isArray(data)) {
-    console.error("Expected array for blog posts but got:", data);
+  if (!data) {
+
     return (
-      <div className="w-full text-center py-8 font-bold text-red-600">
+      <div className="w-full h-screen pt-80 text-center py-8 font-bold text-red-600">
         Failed to load blog data
       </div>
     );
@@ -24,7 +24,7 @@ export default async function Page() {
           Explore our blogs
         </h1>
 
-        {data.map((ele) => (
+        {/* {data?.map((ele) => (
           <BlogCard
             key={ele.id}
             created_at={ele.created_at}
@@ -35,7 +35,7 @@ export default async function Page() {
             tag_name={ele.tag_name}
             link={`/blogs/${ele.slug}`}
           />
-        ))}
+        ))} */}
       </div>
     </div>
   );

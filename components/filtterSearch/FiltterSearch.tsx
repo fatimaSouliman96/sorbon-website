@@ -172,9 +172,9 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
     return (
       formData.keyword.trim() === "" &&
       formData.date.trim() === "" &&
-      formData.duration === 0 &&
-      formData.category === 0 &&
-      formData.city === 0
+      formData.duration === null &&
+      formData.category === null &&
+      formData.city === null
     );
   };
 

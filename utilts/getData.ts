@@ -5,6 +5,7 @@ import { TAPIResponce } from '@/types/types';
 export default async function getData<T>(url: string): Promise<T | null> {
   try {
     const response: TAPIResponce<T> = await axiosInstance.get(url, { timeout: 15000 });
+
     if (isSuccessResponse(response)) {
       return response.data;
     } else {
@@ -12,18 +13,20 @@ export default async function getData<T>(url: string): Promise<T | null> {
       return null;
     }
   } catch (error: any) {
-    console.error("Fetch error:", error.code || error.message);
+    const errorCode = error.code || error.message;
 
-    // Retry once if ECONNRESET
-    if (error.code === "ECONNRESET") {
+
+    // Retry once if connection was aborted or reset
+    if (errorCode === "ECONNRESET" || errorCode === "ECONNABORTED") {
       try {
         console.log("Retrying fetch...");
         const response: TAPIResponce<T> = await axiosInstance.get(url);
         if (isSuccessResponse(response)) return response.data;
       } catch (retryError) {
-        console.error("Retry failed:", retryError);
+        console.log("Retry failed:", retryError);
       }
     }
+
     return null;
   }
 }

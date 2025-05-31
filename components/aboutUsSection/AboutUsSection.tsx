@@ -9,7 +9,7 @@ export default function AboutUsSection() {
                 <p className='text-[28px] font-normal text-secondary pt-12 leading-10 pr-4'>Our goal is to take your practical learning experience to a whole other level and be successful Together.</p>
                 <p className='text-[20px] font-normal text-secondary pt-10'>Maximize your potential in emerging business trends with our professional training courses</p>
             </div>
-            <div className='grid relative grid-cols-2 lg:w-[50%] md:w-[50%] w-full gap-3 h-[402px] bg-rectancle-bg bg-no-repeat bg-center bg-auto' >
+            <div className='grid pt-8 relative grid-cols-2 lg:w-[50%] md:w-[50%] w-full gap-3 h-[402px] bg-rectancle-bg bg-no-repeat bg-center bg-auto' >
                 <div className="absolute w-full h-full top-0 left-0 flex justify-center items-center z-10 ">
                     <Image alt='about2' width={411} height={411} src='/our_values_img 1.svg' />
                 </div>

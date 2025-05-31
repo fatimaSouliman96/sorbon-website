@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "./styles.css";
 import type { Swiper as SwiperClass } from 'swiper';
 import { citiesType } from "@/types/types";
+import Link from "next/link";
 
 interface data {
   cities: citiesType[] | undefined
@@ -92,18 +93,20 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
       >
         {cities?.map((ele) => (
           <SwiperSlide key={ele.id} className="swiper-slide-custom h-[278px] w-full  relative">
-            <Image
-              unoptimized
-              className="rounded-xl"
-              src={ele.image ?? "/veunes.png"}
-              alt="venue"
-              fill
-            />
-            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-xl bg-[#17133f99] z-10">
-              <h1 className="text-4xl text-white font-bold text-center">
-                {ele.title}
-              </h1>
-            </div>
+            <Link href={`/cities/${ele.slug}`} className="w-full h-full relative" >
+              <Image
+                unoptimized
+                className="rounded-xl"
+                src={ele.image ?? "/veunes.png"}
+                alt="venue"
+                fill
+              />
+              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-xl bg-[#17133f99] z-10">
+                <h1 className="text-4xl text-white font-bold text-center">
+                  {ele.title}
+                </h1>
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

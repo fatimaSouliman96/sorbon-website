@@ -52,7 +52,7 @@ const CustomDatePicker: React.FC<DateProps> = ({ form, value, onChange }) => {
   ];
 
   return (
-    <div className="relative z-50 overflow-visible" ref={calendarRef}>
+    <div className="relative  overflow-visible" ref={calendarRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}

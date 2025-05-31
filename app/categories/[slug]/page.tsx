@@ -14,20 +14,20 @@ export default async function page({params}: {params: Promise<{ slug: string }>}
   const data = await getData<courseDetails>(`get-category-courses/${(await params).slug}`);
   const dataCourses = await getData<SessionCource[]>("get-upcoming-courses?lang=en");
   
-  if (!Array.isArray(data)) {
+  if (!data) {
     console.error("Expected array for blog posts but got:", data);
     return (
       <div className="w-full text-center py-8 font-bold text-red-600">
-        Failed to load blog data
+        Failed to load category data
       </div>
     );
   }
   
-  if (!Array.isArray(dataCourses)) {
-    console.error("Expected array for blog posts but got:", dataCourses);
+  if (!dataCourses) {
+ 
     return (
       <div className="w-full text-center py-8 font-bold text-red-600">
-        Failed to load blog data
+        Failed to load cources data
       </div>
     );
   }

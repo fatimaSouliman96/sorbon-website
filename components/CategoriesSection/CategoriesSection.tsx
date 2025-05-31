@@ -23,6 +23,7 @@ export default async function CategoriesSection() {
       <div className='585max:grid-cols-1 grid-cols-2 grid gap-4 w-full pt-4'>
         {data.map((ele, index) => (
           <TransformCard
+            link={`categories/${ele.slug}`}
             key={ele.id}
             title={ele.title}
             image={ele.image}
