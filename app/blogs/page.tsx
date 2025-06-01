@@ -1,4 +1,4 @@
-import BlogCard from '@/components/blogCard/BlogCard';
+// import BlogCard from '@/components/blogCard/BlogCard';
 import HeroCategories from '@/components/heroCategories/HeroCategories';
 import { BlogPost } from '@/types/types';
 import getData from '@/utilts/getData';

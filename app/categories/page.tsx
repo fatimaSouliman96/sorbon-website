@@ -2,7 +2,8 @@ import CardCity from "@/components/cardCity/CardCity";
 import HeroCategories from "@/components/heroCategories/HeroCategories";
 import { CategoriesData } from "@/types/types";
 import getData from "@/utilts/getData";
-import Link from "next/link";
+
+
 export default async function Page() {
   const data = await getData<CategoriesData[]>("get-all-categories?lang=en");
 

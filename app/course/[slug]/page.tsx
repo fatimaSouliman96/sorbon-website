@@ -4,7 +4,6 @@ import { courseCoulmns } from '@/components/table/dataTable'
 import Table from '@/components/table/Table'
 import { CourseDetailsResponse } from '@/types/types'
 import getData from '@/utilts/getData'
-import Image from 'next/image'
 import React from 'react'
 import { Toaster } from 'react-hot-toast'
 
