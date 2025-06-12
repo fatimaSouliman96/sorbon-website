@@ -64,9 +64,9 @@ export default function NavBar() {
                 })}
             </ul>
 
-            <button className="w-40 text-sm font-normal border-2 border-secondary p-2 rounded-lg text-secondary">
+           {!open && <button className="w-40 text-sm font-normal border-2 border-secondary p-2 rounded-lg text-secondary">
                 الدورات بالعربية
-            </button>
+            </button>}
 
             {/* زر القائمة للموبايل */}
             <div className="lg:hidden flex items-center gap-4">
