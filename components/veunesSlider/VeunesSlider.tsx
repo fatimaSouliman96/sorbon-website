@@ -25,7 +25,8 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
     const base = {
       0: { slidesPerView: 1, spaceBetween: 60 },
       585: { slidesPerView: 2, spaceBetween: 20 },
-      721: { slidesPerView: 4, spaceBetween: 30 },
+      969: { slidesPerView: 3, spaceBetween: 30 }, // يغطي من 969 إلى 969 فقط
+      970: { slidesPerView: 4, spaceBetween: 30 },
     };
 
 
@@ -52,7 +53,7 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
   }, [swiperInstance]);
 
   return (
-    <div className="relative veune-swiper">
+    <div className="relative veune-swiper" dir="ltr">
       {/* Custom Navigation Buttons */}
       <div
         ref={desktopPrev}
@@ -102,8 +103,10 @@ const VeunesSlider: React.FC<data> = ({ cities }) => {
                 fill
               />
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center rounded-xl bg-[#17133f99] z-10">
-                <h1 className="text-4xl text-white font-bold text-center">
-                  {ele.title}
+                <h1 className="text-2xl 1100max:text-xl text-white font-bold text-center">
+                  {ele.title.split(' ').map((word, index) => (
+                    <div key={index}>{word}</div>
+                  ))}
                 </h1>
               </div>
             </Link>

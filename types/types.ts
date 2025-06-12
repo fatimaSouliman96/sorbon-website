@@ -272,3 +272,55 @@ export type SearchResponse = {
   title: string,
   slug: string
 }
+export type Category = {
+  id: number;
+  title: string;
+  lang: string;
+  description: string;
+  image: string;
+  image_alt: string;
+  image_title: string;
+  slug: string;
+  h1: string;
+  icon: string;
+  canonical: string;
+  meta_title: string;
+  meta_description: string;
+  meta_keywords: string;
+  meta_robots: string;
+  meta_image: string;
+  meta_image_size: string;
+  meta_type: string;
+  meta_site_name: string;
+  meta_site: string;
+  meta_local: string;
+  meta_card: string;
+  created_at: string; // ISO 8601 datetime string
+  updated_at: string; // ISO 8601 datetime string
+};
+export type City = {
+  id: number;
+  title: string;
+  slug: string;
+  h1: string;
+  description: string;
+  image: string;
+  image_title: string;
+  image_alt: string;
+  lang: string;
+  flag: string;
+  canonical: string;
+  meta_title: string;
+  meta_description: string;
+  meta_keywords: string;
+  meta_robots: string;
+  meta_image: string;
+  meta_image_size: string;
+  meta_type: string;
+  meta_site_name: string;
+  meta_site: string;
+  meta_local: string;
+  meta_card: string;
+  created_at: string; // ISO 8601 datetime
+  updated_at: string; // ISO 8601 datetime
+};

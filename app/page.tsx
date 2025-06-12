@@ -6,16 +6,19 @@ import Veunes from "@/components/vuneusSection/Veunes";
 import CategoriesSection from "@/components/CategoriesSection/CategoriesSection";
 import UpcomingCourcesSection from "@/components/UpcomingCourcesSection/UpcomingCourcesSection";
 
+
 export default async function Home() {
+ 
+  
   return (
     <>
       <HeroCategories background="bg-hero-home-bg" />
-      <CategoriesSection />
-      <UpcomingCourcesSection />
-      <Explore />
-      <Trustworthy />
-      <ClientsSection />
-      <Veunes />
+      <CategoriesSection   />
+      <UpcomingCourcesSection  />
+      <Explore  />
+      <Trustworthy  />
+      <ClientsSection  />
+      <Veunes  />
     </>
   );
 }

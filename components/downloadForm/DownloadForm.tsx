@@ -159,7 +159,7 @@ const DownloadForm: React.FC<DownloadFormProps> = ({ close, time, course }) => {
                     </div>
 
                     <p className="text-base text-white font-medium text-center" >Organizing and Behavioral Skills for Administrative Professionals and Executive Secretaries Course</p>
-                    <div className="1038max:w-full w-[60%] m-auto grid 721max:grid-cols-2 433max:grid-cols-1 grid-cols-1 721min:grid-cols-4 gap-12 pt-4 items-center">
+                    <div className="1038max:w-full w-[60%] m-auto grid 721max:grid-cols-2 433max:grid-cols-2 grid-cols-2 721min:grid-cols-4 gap-12 pt-4 items-center">
                         <div>
                             <label className="text-sm font-semibold text-white">Start Date</label>
                             <p className="text-sm font-semibold text-white">{time?.date_from}</p>
@@ -181,7 +181,7 @@ const DownloadForm: React.FC<DownloadFormProps> = ({ close, time, course }) => {
                 <div className="p-4">
                     <div className="w-full " >
                         <p className="text-2xl text-secondary font-semibold text-left">Contact Information</p>
-                        <div className="grid grid-cols-2 pt-1 gap-x-8 gap-y-1">
+                        <div className="grid 433max:grid-cols-1 grid-cols-2 pt-1 gap-x-8 gap-y-1">
                             <InputField
                                 name="name"
                                 value={formData.name}

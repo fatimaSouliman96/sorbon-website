@@ -1,58 +1,61 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/constant/navLinks";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
 
 export default function NavBar() {
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
     const menuRef = useRef<HTMLUListElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null); // ⬅️ زر القائمة
 
-    // Close the menu when clicking outside
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(event.target as Node) &&
+                buttonRef.current &&
+                !buttonRef.current.contains(event.target as Node) // ⬅️ نضيف هذا الشرط
+            ) {
                 setOpen(false);
             }
         }
 
         if (open) {
             document.addEventListener("mousedown", handleClickOutside);
-        } else {
-            document.removeEventListener("mousedown", handleClickOutside);
         }
 
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
     }, [open]);
 
-
-    // const currentPath = usePathname();
-
-
-
-
     return (
-        <nav className={`bg-primary shadow-[0px_6px_10px_0px_rgba(23,19,63,0.25)] transition-all duration-200 max-w-full w-full fixed top-0 px-12 z-50 py-2 flex items-center justify-between`}>
-            <div className="relative ">
+        <nav className="bg-primary shadow-md fixed top-0 left-0 w-full z-[100] px-6 py-3 flex justify-between items-center">
+            {/* الشعار */}
+            <div className="relative">
                 <Image
-                    src={"/logo-blue.svg"}
-                   width={100}
-                   height={80}
-                    objectFit="cover"
-                    unoptimized={true} alt="sorbon-logo" />
+                    src="/logo-blue.svg"
+                    width={100}
+                    height={80}
+                    alt="sorbon-logo"
+                    unoptimized
+                />
             </div>
 
-            {/* Desktop Menu */}
-            <ul className="gap-6 sm:hidden hidden lg:flex md:hidden">
+            {/* قائمة سطح المكتب */}
+            <ul className="hidden lg:flex gap-6">
                 {navLinks.map((ele) => {
                     const isActive = pathname === ele.link;
                     return (
                         <li
                             key={ele.title}
-                            className={`text-secondary hover:border-secondary text-base  border-b-2 transition-all duration-200  ${isActive ? `border-secondary font-bold` : "font-medium border-transparent"
+                            className={`text-secondary text-base border-b-2 transition-all duration-200 ${isActive
+                                    ? "border-secondary font-bold"
+                                    : "border-transparent font-medium"
                                 }`}
                         >
                             <Link href={ele.link}>{ele.title}</Link>
@@ -61,41 +64,56 @@ export default function NavBar() {
                 })}
             </ul>
 
-            {/* Mobile Menu */}
+            <button className="w-40 text-sm font-normal border-2 border-secondary p-2 rounded-lg text-secondary">
+                الدورات بالعربية
+            </button>
+
+            {/* زر القائمة للموبايل */}
+            <div className="lg:hidden flex items-center gap-4">
+                <button
+                    ref={buttonRef}
+                    onClick={() => setOpen((prev) => !prev)}
+                    className="flex flex-col gap-1 w-7"
+                    aria-label="toggle menu"
+                >
+                    <span className="bg-secondary h-1 w-full rounded"></span>
+                    <span className="bg-secondary h-1 w-full rounded"></span>
+                    <span className="bg-secondary h-1 w-full rounded"></span>
+                </button>
+            </div>
+
+            {/* قائمة الموبايل */}
             {open && (
-                <ul ref={menuRef} className="absolute top-[7rem] left-0 flex flex-col items-center bg-primary p-3 w-full gap-4 lg:hidden md:flex">
+                <ul
+                    ref={menuRef}
+                    className="absolute top-full left-0 w-full bg-primary flex flex-col items-center gap-4 p-6 lg:hidden z-[99] shadow-md"
+                >
                     {navLinks.map((ele) => {
                         const isActive = pathname === ele.link;
                         return (
                             <li
                                 key={ele.title}
-                                className={`text-lg w-fit hover:border-b-2 hover:border-secondary transition-all duration-200 text-secondary ${isActive ? "border-b-2 border-secondary font-bold" : "font-medium"
+                                className={`text-secondary text-base border-b-2 transition-all duration-200 ${isActive
+                                        ? "border-secondary font-bold"
+                                        : "border-transparent font-medium"
                                     }`}
-                                onClick={() => setOpen(false)} // Close menu when clicking a link
                             >
-                                <Link href={ele.link}>{ele.title}</Link>
+                                <Link href={ele.link} onClick={() => setOpen(false)}>
+                                    {ele.title}
+                                </Link>
                             </li>
                         );
                     })}
-                    <button className="text-madani text-center w-40 text-sm font-normal cursor-pointer border-2 p-3 rounded-lg border-secondary">
+
+                    <button className="w-40 text-sm font-normal border-2 border-secondary p-2 rounded-lg text-secondary">
                         الدورات بالعربية
                     </button>
+
                 </ul>
             )}
-
-            {/* Buttons */}
-            <div className="flex gap-2 items-center">
-                <button className={`font-madani text-secondary border-secondary sm:hidden hidden md:hidden justify-center lg:flex items-center w-32 text-lg font-normal cursor-pointer border-2 p-1 rounded-lg `}>
-                    الدورات بالعربية
-                </button>
-                <button onClick={() => setOpen(!open)} className="sm:flex flex md:flex lg:hidden flex-col gap-2 w-8">
-                    <span className={`bg-secondary block w-full h-1`}></span>
-                    <span className={`bg-secondary block w-full h-1`}></span>
-                    <span className={`bg-secondary block w-full h-1`}></span>
-
-                </button>
-            </div>
         </nav>
     );
 }
+
+
 

@@ -8,7 +8,7 @@ import React from 'react'
 const CourseCity: React.FC<Course> = ({title, link}) => {
     
     return (
-        <Link href={link ?? "#"} className=' bg-[#17133FBF] rounded-lg w-full flex justify-between p-2 h-[48px]' >
+        <Link href={link ?? "#"} className=' bg-[#17133FBF] rounded-lg w-full flex justify-between p-2 h-fit' >
             <h1 className='text-lg font-semibold text-white ' >
                 {title}
             </h1>

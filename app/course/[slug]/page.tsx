@@ -1,3 +1,14 @@
+
+export async function generateStaticParams() {
+  const blogs = await getData<CourseDetailsResponse>('get-timings-by-course');
+
+  if (!Array.isArray(blogs)) return [];
+  console.log(blogs)
+  return blogs.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 import CourceTableContent from '@/components/courseTableContent/CourceTableContent'
 import HeroCategories from '@/components/heroCategories/HeroCategories'
 import { courseCoulmns } from '@/components/table/dataTable'
@@ -6,7 +17,6 @@ import { CourseDetailsResponse } from '@/types/types'
 import getData from '@/utilts/getData'
 import React from 'react'
 import { Toaster } from 'react-hot-toast'
-
 
 
 export default async function Page({params}: {params: Promise<{ slug: string }>}) {
@@ -65,10 +75,7 @@ export default async function Page({params}: {params: Promise<{ slug: string }>}
             <h1 className='lg:text-xl text-lg  font-semibold text-secondary uppercase '>{data?.course.h1}</h1>
             <p className='text-sm font-normal pt-2 text-secondary'>{data?.course.title}</p>
           </div>
-          {/* <div className='relative lg:w-[35%] w-full md:w-[35%]' >
-            <Image alt='search' width={24} height={24} src='/search-blue.svg' className='left-0 absolute bottom-1' />
-            <input type='search' placeholder='Search For keywords' className='text-sm font-normal w-full text-secondary pl-8 outline-none border-b-[1px] border-secondary bg-transparent' />
-          </div> */}
+
 
         </div>
         {data?.timings == undefined ?

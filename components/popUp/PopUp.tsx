@@ -31,11 +31,11 @@ const PopUp: React.FC<PopUpProps> = ({close, formNum, time, courseId, course}) =
 
     return (
         <tr
-        className="absolute left-0 w-full h-screen z-50 pt-8 bg-black/50 flex justify-center items-start overflow-y-scroll"
+        className="absolute left-0 w-full h-full z-50 pt-8 bg-black/50 flex justify-center items-start overflow-y-scroll "
         style={{ top: `${topPosition}px` }}
           
         >
-            <td className="w-[90%] mx-auto bg-white rounded-md shadow-lg rounded-t-[3rem]">
+            <td className="lg:w-[90%] sm:w-full lg:h-fit md:h-full md-w-full sm:h-full mx-auto bg-white rounded-md shadow-lg rounded-t-[3rem]">
                 
                 {formNum == 0 && <RegisterForm time={time} close={close}  />}
                 {formNum == 1 && <EnquireForm courseId={courseId} time={time} close={close}  />}

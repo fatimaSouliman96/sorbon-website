@@ -2,14 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-export default function Footer() {
+export default async function Footer() {
+
+
     return (
         <footer className="w-full bg-gradient-to-b from-[#322A8D] to-secondary pt-8 ">
             <div className='585max:px-6 px-16 grid 433max:grid-cols-1 585max:grid-cols-1 721max:grid-cols-2 913max:grid-cols-3  grid-cols-1 914min:grid-cols-[200px_150px_80px_auto] 1213min:gap-[12%] md:gap-[4%] 1213max:gap-[9%] 1100max:gap-[6.3%] 713max:gap-2 688max:gap-0 items-start '>
                 <div className=" relative flex flex-col gap-10">
                     <Image src="/logo-white.svg" width={150} height={200} alt="sorbon-logo" />
                     <div>
-                        <p className='text-base font-light flex items-center text-white gap-2'>Stay Tuned</p>
+                        <p className='text-base font-light flex items-center text-white gap-2'>
+                            Stay Tuned
+                        </p>
                         <ul className='flex items-center gap-4 pt-1' >
                             <li><Image width={20} height={20} alt='facebook' src='/facebook.svg' /></li>
                             <li><Image width={20} height={20} alt='insta' src='/insta.svg' /></li>
@@ -21,21 +25,38 @@ export default function Footer() {
                 <div>
                     <p className='721min:text-xl pb-2 text-lg font-medium text-white' >Navigation</p>
                     <ul className='flex flex-col gap-2 pt-2'>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/"} >Home</Link></li>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/about"} >About</Link></li>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/contact"} >Contact Us</Link></li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/"} >
+                           Home
+                        </Link></li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/about"} >
+                           About
+                        </Link></li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/contact"} >
+                            Contact Us
+                        </Link></li>
                     </ul>
                 </div>
                 <div>
-                    <p className='721min:text-xl pb-2 text-lg font-medium text-white' >Resources</p>
+                    <p className='721min:text-xl pb-2 text-lg font-medium text-white' >
+                       Resources
+                    </p>
                     <ul className='flex flex-col gap-2 pt-2'>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/blogs"} >Blog</Link></li>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>News</li>
-                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>Site Map</li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'><Link href={"/blogs"} >
+                        Blog
+                        </Link></li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>
+                         News
+                            </li>
+                        <li className='721min:text-base text-base font-extralight text-[#ffffffab]'>
+                             Site Map
+                           
+                        </li>
                     </ul>
                 </div>
                 <div>
-                    <p className='721min:text-xl pb-2 text-lg font-medium text-white' >Contact Information</p>
+                    <p className='721min:text-xl pb-2 text-lg font-medium text-white' >
+                       Contact Information
+                    </p>
                     <ul className='flex flex-col gap-2 pt-2'>
                         <li className='text-base font-light flex items-center text-[#ffffffab] gap-2'>
                             <Image className='opacity-[0.6]' width={24} height={24} src='/phone.svg' alt="phone" />

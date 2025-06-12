@@ -4,11 +4,13 @@ import { citiesType } from '@/types/types';
 import getData from '@/utilts/getData';
 
 
+
 export default async function Page() {
-  
+
+
   const data = await getData<citiesType[]>("get-all-cities");
 
-  
+
   if (!Array.isArray(data)) {
 
     return (
@@ -40,7 +42,7 @@ export default async function Page() {
             />
           ))}
         </div>
- 
+
       </div>
     </div>
   );

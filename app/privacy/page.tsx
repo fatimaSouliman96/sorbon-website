@@ -5,7 +5,7 @@ import getData from '@/utilts/getData';
 import React from 'react'
 
 export default async function page() {
-  const data = await getData<termsType>(`get-terms?lang=en`);
+  const data = await getData<termsType>(`get-terms`);
   return (
     <div className='w-full' >
          <HeroCategories background='bg-hero-privacy-bg' />

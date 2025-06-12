@@ -40,7 +40,7 @@ export default function ShowResults() {
   })
 
   const fetchCourses = async () => {
-    const data = await getData<SessionCource[]>("get-upcoming-courses?lang=en");
+    const data = await getData<SessionCource[]>("get-upcoming-courses");
  
     setDataCourses(data);
   };

@@ -73,7 +73,7 @@
   right: 30%;
 }
 
-/* موبايل */
+
 @media(max-width: 860px) {
   .veune-swiper .custom-swiper-button-prev,
   .veune-swiper .custom-swiper-button-next {

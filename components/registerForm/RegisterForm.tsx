@@ -137,7 +137,7 @@ const RegisterForm: React.FC<RegisterProps> = ({ close, time }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="pb-2">
+        <form onSubmit={handleSubmit} className="pb-2 h-[549px] overflow-y-scroll ">
             <div className="w-full bg-secondary rounded-t-3xl p-4">
                 <div className="w-full flex items-center justify-end 721max:gap-[11rem] gap-[30rem]">
                     <h1 className="text-2xl text-white font-semibold text-center">
@@ -157,7 +157,7 @@ const RegisterForm: React.FC<RegisterProps> = ({ close, time }) => {
                     Organizing and Behavioral Skills for Administrative Professionals and
                     Executive Secretaries Course
                 </p>
-                <div className="1038max:w-full w-[60%] m-auto grid 721max:grid-cols-2 433max:grid-cols-1 grid-cols-1 721min:grid-cols-4 gap-12 pt-4 items-center">
+                <div className="1038max:w-full w-[60%] m-auto grid 721max:grid-cols-2 433max:grid-cols-2 grid-cols-2 721min:grid-cols-4 gap-12 pt-4 items-center">
                     <div>
                         <label className="text-sm font-semibold text-white">Start Date</label>
                         <p className="text-sm font-semibold text-white">{time?.date_from}</p>
@@ -181,7 +181,7 @@ const RegisterForm: React.FC<RegisterProps> = ({ close, time }) => {
                 <p className="text-2xl text-secondary font-semibold text-left">
                     Participant Information
                 </p>
-                <div className="grid grid-cols-2 pt-1 gap-x-8 gap-y-1">
+                <div className="grid 433max:grid-cols-1 grid-cols-2 pt-1 gap-x-8 gap-y-1">
                     <InputField name="full_name" value={formData.full_name} onChange={handleChange} placeholder="Full Name*" error={errors.full_name} />
                     <div className='flex flex-col'>
                         <div className='w-full flex border-0 border-b-[1px] border-[#FFFFFF99] ' >
@@ -207,8 +207,8 @@ const RegisterForm: React.FC<RegisterProps> = ({ close, time }) => {
                 <p className="text-2xl text-secondary font-semibold text-left mt-4">
                     Company Information
                 </p>
-                <div className="grid 721max:grid-cols-2 grid-cols-4 pt-1 gap-x-8 gap-y-1">
-                    <div className="col-span-2">
+                <div className="grid 433max:grid-cols-1 721max:grid-cols-2 grid-cols-4 pt-1 gap-x-8 gap-y-1">
+                    <div className="433max:col-span-1 col-span-2">
                         <InputField name="company_name" value={formData.company_name} onChange={handleChange} placeholder="Company Name*" error={errors.company_name} />
                     </div>
                     <InputField name="country" value={formData.country} onChange={handleChange} placeholder="Country*" error={errors.country} />
@@ -218,7 +218,7 @@ const RegisterForm: React.FC<RegisterProps> = ({ close, time }) => {
                 <p className="text-2xl text-secondary font-semibold text-left mt-4">
                     Person Responsible for Training and Development in the Company
                 </p>
-                <div className="grid grid-cols-2 pt-1 gap-x-8 gap-y-1">
+                <div className="grid 433max:grid-cols-1 grid-cols-2 pt-1 gap-x-8 gap-y-1">
                     <InputField name="responsible_name" value={formData.responsible_name} onChange={handleChange} placeholder="Full Name*" error={errors.responsible_name} />
 
                     <div className='flex flex-col'>

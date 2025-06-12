@@ -3,20 +3,24 @@ import CourseCard from '../courseCard/CourseCard'
 import { SessionCource } from '@/types/types';
 import getData from '@/utilts/getData';
 
-export default async function UpcomingCourcesSection() {
 
-  const data = await getData<SessionCource[]>("get-upcoming-courses?lang=en");
+const UpcomingCourcesSection = async () => {
+
+  const data = await getData<SessionCource[]>("get-upcoming-courses");
+
   if (!Array.isArray(data)) {
     console.error("Expected array, but got:", data);
     return (
       <div className='text-center font-extrabold pt-8'>
-        Failed to load data
+
       </div>
     );
   }
   return (
     <div className='bg-[#f0effa] px-10 pt-8 w-full ' >
-      <h1 className='lg:text-2xl text-xl  font-semibold text-secondary uppercase' >upcoming & confirmed courses</h1>
+      {data.length !== 0 && <h1 className='lg:text-2xl text-xl  font-semibold text-secondary uppercase' >
+        upcoming & confirmed courses
+      </h1>}
       <div className='585max:grid-cols-1 grid-cols-2 grid gap-4 w-full pt-4'>
         {
           data?.map((ele, index) => {
@@ -29,3 +33,5 @@ export default async function UpcomingCourcesSection() {
     </div>
   )
 }
+
+export default UpcomingCourcesSection;

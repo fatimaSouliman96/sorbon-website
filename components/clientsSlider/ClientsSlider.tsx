@@ -36,7 +36,7 @@ export default function ClientsSlider() {
 
 
   return (
-    <div className="relative client-swiper">
+    <div className="relative client-swiper" dir='ltr'>
       {/* Navigation Buttons */}
       <div
         ref={refPrev}

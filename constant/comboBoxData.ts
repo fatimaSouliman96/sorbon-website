@@ -30,20 +30,25 @@ export const comboBoxData: comboBoxType[] = [
             
         ]
 
-    },
-   
+    }
+]
+export const comboBoxDataAr: comboBoxType[] = [
+    {
 
+        lable: "المدة",
+        options: [
+            {
+                options: "5 يوم",
+                value: 5
+            },
+            {
+                options: "10 يوم",
+                value: 10
+            },
+            
+        ]
 
-
-    // {
-    //     lable: "Course type",
-    //     options: [
-    //         {
-    //             options: "Course type",
-    //             value: "Course type"
-    //         }
-    //     ]
-    // },
+    }
 ]
 
 export const countryOptions: optionsValues[] = [

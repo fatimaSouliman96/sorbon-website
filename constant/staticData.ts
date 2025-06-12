@@ -97,3 +97,88 @@ export const exploreCourses = [
     },
 ]
 
+export const exploreCoursesAr = [
+    {
+        title: "الدورات التدريبية العامة",
+        descraption: "متاحة للأفراد والمؤسسات لاكتساب منظور جديد حول التطوير المهني والتحديات المشتركة.",
+        image: "/public-training.png"
+    },
+    {
+        title: "الدورات التدريبية المصممة خصيصًا",
+        descraption: "خصص التدريبات المؤسسية لتلبية احتياجات عملك الفورية.",
+        image: "/tailored-icon.png"
+    },
+    {
+        title: "الدورات التدريبية داخل المؤسسة",
+        descraption: "نقدم خبرات عالمية واسعة داخل مؤسستك.",
+        image: "/inhouse-icon.png"
+    },
+    {
+        title: "الدورات التدريبية عبر الإنترنت",
+        descraption: "دورات تدريبية معتمدة ومعترف بها دوليًا تُقدَّم من خلال فصول افتراضية.",
+        image: "/onlline-training.png"
+    },
+];
+
+export const aboutData = [
+    {
+        title: "Our Vision",
+        content: ["To be a preferred training hub for professionals worldwide.",
+        "To be an essential part of a functional development cycle.",
+        "Offer a various and wide range of professional training courses.",
+        "Provide High Quality Experiential Learning"],
+        reserve: false,
+        image: '/our.png'
+    },
+    {
+        title: "Our Mission",
+        content: ["TFulfill our commitments Toward usersTo develop their competency and improve performance to drive business success",
+        "Developing and Introducing Courses By tracking the latest business and industry trends in top emerging markets",
+        "Assure that participants' needs are always met By bringing together practical knowledge and industry experience"],
+        reserve: true,
+        image: '/mission.png'
+    },
+    {
+        title: "Our Values",
+        content: ["To be a preferred training hub for professionals worldwide.",
+        "To be an essential part of a functional development cycle.",
+        "Offer a various and wide range of professional training courses.",
+        "Provide High Quality Experiential Learning"],
+        reserve: false,
+        image: '/values.png'
+    },
+]
+export const aboutDataAr = [
+    {
+        title: "رؤيتنا",
+        content: [
+            "أن نكون مركز التدريب المفضل للمهنيين في جميع أنحاء العالم.",
+            "أن نكون جزءًا أساسيًا من دورة تطوير فعّالة.",
+            "تقديم مجموعة متنوعة وواسعة من الدورات التدريبية المهنية.",
+            "توفير تجربة تعليمية عالية الجودة."
+        ],
+        reserve: false,
+        image: '/our.png'
+    },
+    {
+        title: "مهمتنا",
+        content: [
+            "الوفاء بالتزاماتنا تجاه المستخدمين لتطوير كفاءتهم وتحسين أدائهم لدفع نجاح الأعمال.",
+            "تطوير وتقديم الدورات من خلال متابعة أحدث الاتجاهات في الأعمال والأسواق الناشئة الرائدة.",
+            "ضمان تلبية احتياجات المشاركين دائمًا من خلال الجمع بين المعرفة العملية والخبرة الصناعية."
+        ],
+        reserve: true,
+        image: '/mission.png'
+    },
+    {
+        title: "قيمنا",
+        content: [
+            "أن نكون مركز التدريب المفضل للمهنيين في جميع أنحاء العالم.",
+            "أن نكون جزءًا أساسيًا من دورة تطوير فعّالة.",
+            "تقديم مجموعة متنوعة وواسعة من الدورات التدريبية المهنية.",
+            "توفير تجربة تعليمية عالية الجودة."
+        ],
+        reserve: false,
+        image: '/values.png'
+    },
+];

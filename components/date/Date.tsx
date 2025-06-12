@@ -65,8 +65,8 @@ const CustomDatePicker: React.FC<DateProps> = ({ form, value, onChange }) => {
         type="text"
         value={value ? value.split("-").reverse().join(" / ") : ""}
         readOnly
-        placeholder="Select a date"
-        className={`w-full placeholder:text-white border-b border-white bg-transparent outline-none ${form ? "p-1" : "p-2"} text-white cursor-pointer`}
+        placeholder={ "Select a date" }
+        className={`w-full px-8 placeholder:text-white border-b border-white bg-transparent outline-none ${form ? "p-1" : "p-2"} text-white cursor-pointer`}
         onClick={() => setIsOpen(!isOpen)}
       />
 

@@ -31,7 +31,8 @@ interface FiltterSearchProps {
     cityText: string;
     date: string
   }) => void;
-  setNewResults?: (results: SearchResponse[]) => void
+  setNewResults?: (results: SearchResponse[]) => void,
+
 }
 
 const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData, setNewResults }) => {
@@ -76,7 +77,7 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
 
 
   const getCities = async () => {
-    const data = await getData<citiesType[]>("get-all-cities?lang=en")
+    const data = await getData<citiesType[]>("get-all-cities")
     const citiesData = data || [];
 
     const formattedCities = citiesData.map((ele) => ({
@@ -85,7 +86,7 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
     }));
 
     setCities(formattedCities);
-    const categoriesData = await getData<CategoriesData[]>("get-all-categories?lang=en");
+    const categoriesData = await getData<CategoriesData[]>("get-all-categories");
     const items = categoriesData || [];
     const formattedCategories = items.map((ele) => ({
       options: ele.title,
@@ -189,21 +190,21 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
           width={24}
           height={24}
           src="/search-filtter.svg"
-          className="cursor-pointer right-0 absolute bottom-1"
+          className={ `cursor-pointer right-0 absolute bottom-1` }
         />
         <Image
           alt="search"
           width={24}
           height={24}
           src="/search.svg"
-          className="left-0 absolute bottom-1"
+          className={"left-0 absolute bottom-1"}
         />
         <input
           type="search"
           value={formData.keyword}
           onChange={(e) => setFormData({ ...formData, keyword: e.target.value })}
-          placeholder="Search..."
-          className="w-full  text-white pl-8 outline-none border-b-[1px] border-white bg-transparent"
+          placeholder={"Search ..." }
+          className="w-full  text-white px-8 outline-none border-b-[1px] border-white bg-transparent"
         />
       </div>
 
@@ -224,7 +225,8 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
                 }))
               }}
             />
-          ))}
+          ))
+        }
 
           <ComboBox
             label={"Category"}
@@ -240,11 +242,12 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
           />
           {/* Date Picker */}
           <CustomDatepicker
+ 
             value={formData.date}
             onChange={(value: string) => setFormData({ ...formData, date: value })}
           />
           <ComboBox
-            label={"Venue"}
+            label={"Venue" }
             options={cities}
             value={formData.city}
             onChange={(value, text) => {
@@ -264,7 +267,7 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
               className={`relative bg-white transform flex items-center justify-center transition-transform duration-200 text-secondary w-1/2 rounded h-[40px]
                 }`}
             >
-              {!isLoading && "Search"}
+              {!isLoading &&  "Search"}
               {isLoading && (
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white rounded">
                   <div className="w-6 h-6 border-4 border-t-transparent border-secondary rounded-full animate-spin" />
@@ -276,7 +279,9 @@ const FiltterSearch: React.FC<FiltterSearchProps> = ({ searchFun, setSearchData,
               onClick={handleClear}
               className="bg-transparent transform transition-transform duration-200 text-white border border-white rounded w-1/2 h-[40px]"
             >
-              Clear
+              {
+                 "Clear"
+              }
             </button>
           </div>
         </div>
