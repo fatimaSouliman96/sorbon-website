@@ -31,7 +31,7 @@ const PopUp: React.FC<PopUpProps> = ({close, formNum, time, courseId, course}) =
 
     return (
         <tr
-        className="absolute left-0 w-full h-full z-50 pt-8 bg-black/50 flex justify-center items-start overflow-y-scroll "
+        className="absolute left-0 w-full h-full  z-50 pt-8 bg-black/50 flex justify-center items-start overflow-y-scroll "
         style={{ top: `${topPosition}px` }}
           
         >

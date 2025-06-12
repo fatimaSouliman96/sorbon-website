@@ -34,7 +34,7 @@ export default function NavBar() {
     }, [open]);
 
     return (
-        <nav className="bg-primary shadow-md fixed top-0 left-0 w-full z-[100] px-6 py-3 flex justify-between items-center">
+        <nav className="bg-primary shadow-md fixed top-0 left-0 w-full z-40 px-6 py-3 flex justify-between items-center">
             {/* الشعار */}
             <div className="relative">
                 <Image
@@ -64,9 +64,9 @@ export default function NavBar() {
                 })}
             </ul>
 
-           {!open && <button className="w-40 text-sm font-normal border-2 border-secondary p-2 rounded-lg text-secondary">
+            <button className="w-40 text-sm font-normal border-2 border-secondary p-2 rounded-lg text-secondary">
                 الدورات بالعربية
-            </button>}
+            </button>
 
             {/* زر القائمة للموبايل */}
             <div className="lg:hidden flex items-center gap-4">
